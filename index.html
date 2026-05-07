@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIENVENU A – GRILLZ EMPIRE</title>
+  <meta name="description" content="Grillz dentaires sur mesure en Chrome-Cobalt et Gold. Fabrication artisanale à Lomé, Togo. À partir de 25 000 FCFA. Livraison parout.">
+  <meta name="keywords" content="grillz, grillz sur mesure, grillz Togo, grillz Lomé, grillz or, grillz chrome, dental grillz, grillz Afrique">
+  <meta name="author" content="Grillz Empire">
+  <meta property="og:title" content="Grillz Empire – Grillz sur mesure à Lomé">
+  <meta property="og:description" content="Grillz dentaires sur mesure en Chrome-Cobalt et Gold. À partir de 25 000 FCFA.">
+  <meta property="og:image" content="Nos-realisation/grillz-logo/logo.jpeg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/jpeg" href="Nos-realisation/grillz-logo/logo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <img src="Nos-realisation/grillz-logo/logo.jpeg" alt="Grillz Empire">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#process">Comment ça marche</a></li>
+    <li><a href="#prix">Tarifs</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#collab">Collabs</a></li>
+    <li><a href="#contact" class="nav-cta">Commander</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENU MOBILE -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#realisations" class="mobile-link">Réalisations</a>
+  <a href="#process" class="mobile-link">Comment ça marche</a>
+  <a href="#prix" class="mobile-link">Tarifs</a>
+  <a href="#avis" class="mobile-link">Avis</a>
+  <a href="#collab" class="mobile-link">Collabs</a>
+  <a href="#contact" class="mobile-link">Commander</a>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- ========== HERO ========== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="Nos-realisation/video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <p class="hero-tag">✦ TAWFIK X MOUSTAHAB ✦</p>
+    <h1 class="hero-title">
+      <span class="line-1">Bienvenu à</span>
+      <span>Grillz Empire</span>
+    </h1>
+    <p class="hero-sub">Grillz sur mesure en or & chrome. Fabriqué avec précision, porté avec fierté.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold">
+        <i class="fab fa-whatsapp"></i> Commander maintenant
+      </a>
+      <a href="#realisations" class="btn-outline">Voir les réalisations</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">✦ À partir de 25 000 FCFA</div>
+      <div class="hero-badge">✦ Garantie 06 mois</div>
+      <div class="hero-badge">✦ Livraison partout</div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-dot"></div></div>
+</section>
+
+<!-- ========== STATS ========== -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal-up">
+      <span class="stat-num" data-target="100">0</span><span class="stat-suf">+</span>
+      <p>Clients satisfaits</p>
+    </div>
+    <div class="stat-item reveal-up">
+      <span class="stat-num" data-target="1">0</span><span class="stat-suf">an</span>
+      <p>D'expérience</p>
+    </div>
+    <div class="stat-item reveal-up">
+      <span class="stat-num" data-target="7">0</span><span class="stat-suf">jour</span>
+      <p>Délai de livraison</p>
+    </div>
+    <div class="stat-item reveal-up">
+      <span class="stat-num" data-target="100">0</span><span class="stat-suf">%</span>
+      <p>Sur mesure</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== RÉALISATIONS ========== -->
+<section id="realisations">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Notre travail</span>
+    <h2>Nos Réalisations</h2>
+    <p class="section-desc">Chaque pièce est unique. Voici ce qu'on a créé pour nos clients.</p>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="filter-tabs reveal-up">
+    <button class="tab active" data-filter="all">Tout</button>
+    <button class="tab" data-filter="chrome">Chrome-Cobalt</button>
+    <button class="tab" data-filter="gold">Gold</button>
+    <button class="tab" data-filter="custom">Custom</button>
+  </div>
+  <div class="gallery" id="gallery"></div>
+  <div class="gallery-more" id="galleryMore">
+    <button class="btn-outline" id="galleryBtn" onclick="toggleGallery()">Voir plus ↓</button>
+  </div>
+  <div class="realisations-cta reveal-up">
+    <a href="https://wa.me/22871107392?text=Bonjour%2C%20j%27ai%20vu%20vos%20r%C3%A9alisations%20et%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="btn-gold">
+      <i class="fab fa-whatsapp"></i> Je veux le même
+    </a>
+  </div>
+</section>
+
+<!-- ========== COMMENT ÇA MARCHE ========== -->
+<section id="process">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Le processus</span>
+    <h2>Comment ça marche</h2>
+    <p class="section-desc">Simple, rapide et professionnel. En 4 étapes.</p>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal-up">
+      <div class="step-icon">📲</div>
+      <div class="step-num-big">01</div>
+      <h3>Prise de contact</h3>
+      <p>Vous nous contactez sur WhatsApp. On discute de votre style et de vos envies.</p>
+    </div>
+    <div class="process-arrow">→</div>
+    <div class="process-step reveal-up">
+      <div class="step-icon">📍</div>
+      <div class="step-num-big">02</div>
+      <h3>Rendez-vous</h3>
+      <p>Nous fixons un rendez-vous pour la prise d'empreinte dentaire précise.</p>
+    </div>
+    <div class="process-arrow">→</div>
+    <div class="process-step reveal-up">
+      <div class="step-icon">⚙️</div>
+      <div class="step-num-big">03</div>
+      <h3>Fabrication</h3>
+      <p>Votre grillz est fabriqué sur mesure avec les matériaux de votre choix. Délai : 7 jours.</p>
+    </div>
+    <div class="process-arrow">→</div>
+    <div class="process-step reveal-up">
+      <div class="step-icon">👑</div>
+      <div class="step-num-big">04</div>
+      <h3>Livraison</h3>
+      <p>Vous récupèrez votre grillz en main propre ou par livraison partout.</p>
+    </div>
+  </div>
+  <div class="process-cta reveal-up">
+    <a href="https://wa.me/22871107392?text=Bonjour%20Grillz%20Empire%2C%20je%20voudrais%20prendre%20rendez-vous%20pour%20une%20grillz." target="_blank" class="btn-gold">
+      <i class="fab fa-whatsapp"></i> Prendre rendez-vous
+    </a>
+  </div>
+</section>
+
+<!-- ========== PRIX ========== -->
+<section id="prix">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Tarifs</span>
+    <h2>Nos Prix</h2>
+    <p class="section-desc">Des prix clairs pour des clients sérieux.</p>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="prix-grid">
+
+    <div class="prix-card reveal-up">
+      <div class="prix-icon">🦷</div>
+      <h3>Chrome-Cobalt</h3>
+      <div class="prix-amount">
+        <span class="prix-from">à partir de</span>
+        <span class="prix-val">25 000</span>
+        <span class="prix-currency">FCFA</span>
+      </div>
+      <ul class="prix-features">
+        <li>✦ Alliage dentaire premium</li>
+        <li>✦ Finition brillante</li>
+        <li>✦ Sur mesure</li>
+        <li>✦ Garantie 06 mois</li>
+      </ul>
+      <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20une%20grillz%20Chrome-Cobalt." target="_blank" class="btn-outline btn-full">
+        <i class="fab fa-whatsapp"></i> Commander
+      </a>
+    </div>
+
+    <div class="prix-card prix-card-featured reveal-up">
+      <div class="prix-badge">⭐ Populaire</div>
+      <div class="prix-icon">👑</div>
+      <h3>Gold</h3>
+      <div class="prix-amount">
+        <span class="prix-from">à partir de</span>
+        <span class="prix-val">35 000</span>
+        <span class="prix-currency">FCFA</span>
+      </div>
+      <ul class="prix-features">
+        <li>✦ Or véritable</li>
+        <li>✦ Finition luxe</li>
+        <li>✦ Sur mesure</li>
+        <li>✦ Garantie 06 mois</li>
+      </ul>
+      <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20une%20grillz%20Gold." target="_blank" class="btn-gold btn-full">
+        <i class="fab fa-whatsapp"></i> Commander
+      </a>
+    </div>
+
+    <div class="prix-card reveal-up">
+      <div class="prix-icon">�</div>
+      <h3>Iced Out & Custom</h3>
+      <div class="prix-amount">
+        <span class="prix-from">prix</span>
+        <span class="prix-val" style="font-size:2rem">Sur devis</span>
+      </div>
+      <ul class="prix-features">
+        <li>✦ Diamants & pierres</li>
+        <li>✦ Design personnalisé</li>
+        <li>✦ Gravure & initiales</li>
+        <li>✦ Garantie 06 mois</li>
+      </ul>
+      <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20voudrais%20un%20devis%20pour%20une%20grillz%20Iced%20Out." target="_blank" class="btn-outline btn-full">
+        <i class="fab fa-whatsapp"></i> Demander un devis
+      </a>
+    </div>
+
+  </div>
+  <p class="prix-note reveal-up">* Les prix varient selon le nombre de dents et les options choisies. Contactez-nous pour un devis précis.</p>
+</section>
+
+<!-- ========== AVIS ========== -->
+<section id="avis">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Témoignages</span>
+    <h2>Ce que disent nos clients</h2>
+    <div class="avis-rating reveal-up">
+      <span class="stars">★★★★★</span>
+      <strong>4.9/5</strong>
+      <span>— 200+ avis</span>
+    </div>
+    <div class="gold-bar" style="margin-top:20px"></div>
+  </div>
+  <div class="reviews-wrapper">
+    <div class="reviews-track" id="reviewsTrack"></div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+  <div class="section-header reveal-up">
+    <span class="section-tag">On est là</span>
+    <h2>Nous Contacter</h2>
+    <p class="section-desc">Prêt à commander ? Une question ? On répond vite.</p>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="contact-layout">
+    <div class="contact-main reveal-up">
+      <a href="https://wa.me/22871107392?text=Bonjour%20Grillz%20Empire%2C%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="contact-big-btn">
+        <i class="fab fa-whatsapp"></i>
+        <div>
+          <strong>WhatsApp — Togo</strong>
+          <span>+228 71 10 73 92 — Réponse rapide</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://wa.me/2290197541303?text=Bonjour%20Grillz%20Empire%2C%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="contact-big-btn">
+        <i class="fab fa-whatsapp"></i>
+        <div>
+          <strong>WhatsApp — Bénin</strong>
+          <span>+229 01 97 54 13 03 — Réponse rapide</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://www.instagram.com/grillz_empire" target="_blank" class="contact-big-btn contact-insta">
+        <i class="fab fa-instagram"></i>
+        <div>
+          <strong>Suivre sur Instagram</strong>
+          <span>@grillz_empire — Nos dernières créations</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://www.tiktok.com/@grillz.empire" target="_blank" class="contact-big-btn contact-tiktok">
+        <i class="fab fa-tiktok"></i>
+        <div>
+          <strong>Suivre sur TikTok</strong>
+          <span>@grillz.empire — Vidéos de fabrication</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+    <div class="contact-info reveal-up">
+      <div class="contact-info-item">
+        <span>📍</span>
+        <div>
+          <strong>Localisation</strong>
+          <p>Lomé, Togo</p>
+          <small>Rendez-vous sur place pour la prise d'empreinte</small>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.2139410313407!2d1.1986795749904937!3d6.235506093752723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTQnMDcuOCJOIDHCsDEyJzA0LjUiRQ!5e0!3m2!1sfr!2stg!4v1777987128612!5m2!1sfr!2stg" width="100%" height="200" style="border:0;display:block;width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- ✏️ REMPLACE LE LIEN src="..." PAR TON LIEN GOOGLE MAPS -->
+          </div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <span>⏰</span>
+        <div>
+          <strong>Disponibilité</strong>
+          <p>7j/7 — 9h à 22h</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <span>🚚</span>
+        <div>
+          <strong>Livraison</strong>
+          <p>Partout en dans le monde</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <span>📧</span>
+        <div>
+          <strong>Email</strong>
+          <p>grillzempire94@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COLLABORATION ========== -->
+<section id="collab">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Partenariats</span>
+    <h2>On fait des Collabs</h2>
+    <p class="section-desc">Artiste, influenceur, rappeur, barbier ou boutique — on est ouverts à toute collaboration sérieuse.</p>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="collab-grid">
+    <div class="collab-card reveal-up">
+      <div class="collab-icon">🎤</div>
+      <h3>Artistes & Rappeurs</h3>
+      <p>Tu veux un grillz pour ton image ou un partenariat pour tes clips ? On en parle.</p>
+    </div>
+    <div class="collab-card reveal-up">
+      <div class="collab-icon">📱</div>
+      <h3>Influenceurs</h3>
+      <p>Tu as une communauté engagée ? On peut créer quelque chose ensemble.</p>
+    </div>
+    <div class="collab-card reveal-up">
+      <div class="collab-icon">💈</div>
+      <h3>Barbiers & Salons</h3>
+      <p>Tu reçois des clients qui veulent du style ? Propose-leur nos grillz.</p>
+    </div>
+    <div class="collab-card reveal-up">
+      <div class="collab-icon">🏪</div>
+      <h3>Boutiques & Revendeurs</h3>
+      <p>Tu veux revendre nos créations dans ta boutique ? Contacte-nous.</p>
+    </div>
+  </div>
+
+  <!-- FORMULAIRE + IMAGE ROTATIVE -->
+  <div class="collab-form-section reveal-up">
+
+    <!-- Image rotative -->
+    <div class="collab-visual">
+      <div class="collab-spin-wrap">
+        <div class="collab-spin-ring"></div>
+        <img src="Nos-realisation/video/form.png" alt="Grillz Empire" class="collab-spin-img">
+      </div>
+      <p class="collab-visual-label">✦ Grillz sur mesure ✦</p>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="collab-form-wrap">
+      <h3 class="collab-form-title">Propose ta collaboration</h3>
+      <p class="collab-form-sub">Remplis ce formulaire et on te répond dans les 24h.</p>
+      <form class="collab-form" id="collabForm" onsubmit="submitCollabForm(event)">
+        <div class="collab-form-row">
+          <div class="collab-field">
+            <label>Nom / Pseudo</label>
+            <input type="text" name="nom" placeholder="Ton nom ou pseudo" required>
+          </div>
+          <div class="collab-field">
+            <label>Type de profil</label>
+            <select name="type" required>
+              <option value="" disabled selected>Choisir...</option>
+              <option value="Artiste / Rappeur">Artiste / Rappeur</option>
+              <option value="Influenceur">Influenceur</option>
+              <option value="Barbier / Salon">Barbier / Salon</option>
+              <option value="Boutique / Revendeur">Boutique / Revendeur</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="collab-form-row">
+          <div class="collab-field">
+            <label>WhatsApp / Téléphone</label>
+            <input type="tel" name="phone" placeholder="+228 XX XX XX XX" required>
+          </div>
+          <div class="collab-field">
+            <label>Instagram / TikTok (optionnel)</label>
+            <input type="text" name="social" placeholder="@tonpseudo">
+          </div>
+        </div>
+        <div class="collab-field">
+          <label>Ton idée de collab</label>
+          <textarea name="message" rows="4" placeholder="Décris ton projet, ton audience, ce que tu proposes..." required></textarea>
+        </div>
+        <button type="submit" class="btn-gold collab-submit">
+          <i class="fab fa-whatsapp"></i> Envoyer via WhatsApp
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">GRILLZ EMPIRE</span>
+      <p>Grillz dentaires sur mesure. Fabriqué avec passion à Lomé, Togo.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/22871107392" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/grillz_empire" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@grillz.empire" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h4>Navigation</h4>
+      <a href="#realisations">Réalisations</a>
+      <a href="#process">Comment ça marche</a>
+      <a href="#prix">Tarifs</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-nav">
+      <h4>Commander</h4>
+      <a href="https://wa.me/22871107392?text=Chrome-Cobalt" target="_blank">Grillz Chrome-Cobalt</a>
+      <a href="https://wa.me/22871107392?text=Gold" target="_blank">Grillz Gold</a>
+      <a href="https://wa.me/22871107392?text=Iced+Out" target="_blank">Iced Out</a>
+      <a href="https://wa.me/22871107392?text=Custom" target="_blank">Custom</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Grillz Empire. Tous droits réservés. Lomé, Togo.</p>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
