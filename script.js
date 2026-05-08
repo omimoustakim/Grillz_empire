@@ -115,13 +115,13 @@ const galleryData = [
   { type: 'chrome', name: 'Chrome Open Face', desc: 'Chrome-Cobalt – Open Face',  img: 'Nos-realisation/grillz-7.jpeg' },
   { type: 'chrome', name: 'Chrome Solid',     desc: 'Chrome-Cobalt – 6 dents',    img: 'Nos-realisation/grillz-10.jpeg' },
   { type: 'gold',   name: 'Gold Solid',       desc: 'Gold – Finition brillant',   img: 'Nos-realisation/grillz-3.PNG' },
-  { type: 'gold',   name: 'Gold VVS',         desc: 'Gold – Diamants certifiés',  img: 'Nos-realisation/grillz-4.PNG' },
-  { type: 'gold',   name: 'Gold Rosé',        desc: 'Gold – Sur mesure',          img: 'Nos-realisation/grillz-8.jpeg' },
+  { type: 'gold',   name: 'Gold VVS',         desc: 'Gold – Diamants certifies',  img: 'Nos-realisation/grillz-4.PNG' },
+  { type: 'gold',   name: 'Gold Rose',        desc: 'Gold – Sur mesure',          img: 'Nos-realisation/grillz-8.jpeg' },
   { type: 'custom', name: 'Drip Pattern',     desc: 'Style exclusif',             img: 'Nos-realisation/grillz-6.jpeg' },
-  { type: 'custom', name: 'Initiales',        desc: 'Identité unique',            img: 'Nos-realisation/grillz-9.jpeg' },
-  { type: 'custom', name: 'Grillz 11',        desc: 'Réalisation exclusive',      img: 'Nos-realisation/grillz-11.JPG' },
-  { type: 'custom', name: 'Grillz 12',        desc: 'Réalisation exclusive',      img: 'Nos-realisation/grillz-12.jpg' },
-  { type: 'custom', name: 'Grillz 13',        desc: 'Réalisation exclusive',      img: 'Nos-realisation/grillz-13.jpg' },
+  { type: 'custom', name: 'Initiales',        desc: 'Identite unique',            img: 'Nos-realisation/grillz-9.jpeg' },
+  { type: 'custom', name: 'Grillz 11',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.JPG' },
+  { type: 'custom', name: 'Grillz 12',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-12.jpg' },
+  { type: 'custom', name: 'Grillz 13',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.jpg' },
 ];
 
 const INITIAL = 6;
@@ -139,9 +139,9 @@ function renderGallery(filter) {
     const div = document.createElement('div');
     div.className = 'gallery-item' + (i >= INITIAL ? ' hidden' : '');
     div.innerHTML = item.img
-      ? `<img src="${item.img}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder><span>📷</span><p>Photo à venir</p></div>'">
+      ? `<img src="${item.img}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder><span>📷</span><p>Photo a venir</p></div>'">
          <div class="gallery-tag gallery-tag-${item.type}">${item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom'}</div>`
-      : `<div class="gallery-placeholder"><span>📷</span><p>Photo à venir</p></div>`;
+      : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
     grid.appendChild(div);
   });
 
@@ -155,7 +155,7 @@ function toggleGallery() {
   if (!showAll) {
     document.querySelectorAll('.gallery-item.hidden').forEach(el => el.classList.remove('hidden'));
     showAll = true;
-    btn.textContent = 'Réduire ↑';
+    btn.textContent = 'Reduire ↑';
   } else {
     document.querySelectorAll('.gallery-item').forEach((el, i) => {
       if (i >= INITIAL) el.classList.add('hidden');
@@ -179,13 +179,13 @@ document.querySelectorAll('.tab').forEach(btn => {
 
 /* ── AVIS ── */
 const reviews = [
-  { name: 'Kofi A.',   loc: 'Accra, Ghana',           text: 'Qualité incroyable ! Mes grillz en Gold sont parfaits. Service rapide et professionnel.',            stars: 5, init: 'K' },
-  { name: 'Ama S.',    loc: 'Lomé, Togo',              text: 'J\'adore mon grillz Open Face ! Exactement ce que je voulais. Tout le monde me pose des questions !', stars: 5, init: 'A' },
-  { name: 'Prince D.', loc: 'Cotonou, Bénin',          text: 'Iced Out – absolument royal. Livraison rapide et emballage très professionnel.',                     stars: 5, init: 'P' },
-  { name: 'Fatou M.',  loc: 'Dakar, Sénégal',          text: 'Mon grillz personnalisé est magnifique. L\'équipe très patiente pour créer exactement ce que je voulais.', stars: 5, init: 'F' },
-  { name: 'Yao B.',    loc: 'Abidjan, Côte d\'Ivoire', text: 'Grillz Empire c\'est THE référence en Afrique de l\'Ouest. Qualité irréprochable !',                stars: 5, init: 'Y' },
-  { name: 'Nadia K.',  loc: 'Lomé, Togo',              text: 'Commandé pour mon anniversaire — qualité exceptionnelle. 100% recommandé !',                         stars: 5, init: 'N' },
-  { name: 'Mawuli T.', loc: 'Kara, Togo',              text: 'Chrome-Cobalt Solid. Le fitting était parfait, rien de gênant. Parfait !',                           stars: 5, init: 'M' },
+  { name: 'Kofi A.',   loc: 'Accra, Ghana',           text: 'Qualite incroyable ! Mes grillz en Gold sont parfaits. Service rapide et professionnel.',            stars: 5, init: 'K' },
+  { name: 'Ama S.',    loc: 'Lome, Togo',              text: 'J\'adore mon grillz Open Face ! Exactement ce que je voulais. Tout le monde me pose des questions !', stars: 5, init: 'A' },
+  { name: 'Prince D.', loc: 'Cotonou, Benin',          text: 'Iced Out - absolument royal. Livraison rapide et emballage tres professionnel.',                     stars: 5, init: 'P' },
+  { name: 'Fatou M.',  loc: 'Dakar, Senegal',          text: 'Mon grillz personnalise est magnifique. L\'equipe tres patiente pour creer exactement ce que je voulais.', stars: 5, init: 'F' },
+  { name: 'Yao B.',    loc: 'Abidjan, Cote d\'Ivoire', text: 'Grillz Empire c\'est THE reference en Afrique de l\'Ouest. Qualite irreprochable !',                stars: 5, init: 'Y' },
+  { name: 'Nadia K.',  loc: 'Lome, Togo',              text: 'Commande pour mon anniversaire — qualite exceptionnelle. 100% recommande !',                         stars: 5, init: 'N' },
+  { name: 'Mawuli T.', loc: 'Kara, Togo',              text: 'Chrome-Cobalt Solid. Le fitting etait parfait, rien de genants. Parfait !',                          stars: 5, init: 'M' },
   { name: 'Aissa R.',  loc: 'Niamey, Niger',           text: 'Livraison en temps, emballage luxueux, grillz parfait. Grillz Empire tient ses promesses !',         stars: 5, init: 'A' },
 ];
 
@@ -225,7 +225,7 @@ function submitCollabForm(e) {
   const social  = form.social.value.trim();
   const message = form.message.value.trim();
 
-  const text = `Bonjour Grillz Empire 👋\n\n*Proposition de collaboration*\n\n👤 Nom / Pseudo : ${nom}\n🎭 Profil : ${type}\n📞 Contact : ${phone}${social ? `\n📲 Réseaux : ${social}` : ''}\n\n💬 Idée de collab :\n${message}`;
+  const text = `Bonjour Grillz Empire 👋\n\n*Proposition de collaboration*\n\n👤 Nom / Pseudo : ${nom}\n🎭 Profil : ${type}\n📞 Contact : ${phone}${social ? `\n📲 Reseaux : ${social}` : ''}\n\n💬 Idee de collab :\n${message}`;
 
   const url = `https://wa.me/22871107392?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank');
