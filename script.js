@@ -122,6 +122,7 @@ const galleryData = [
   { type: 'custom', name: 'Grillz 11',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.JPG' },
   { type: 'custom', name: 'Grillz 12',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-12.jpg' },
   { type: 'custom', name: 'Grillz 13',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.jpg' },
+  { type: 'custom', name: 'Grillz 5',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-5.jpg' },
 ];
 
 const INITIAL = 6;
