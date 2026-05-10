@@ -122,9 +122,13 @@ const galleryData = [
   { type: 'custom', name: 'Grillz 11',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.JPG' },
   { type: 'custom', name: 'Grillz 12',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-12.jpg' },
   { type: 'custom', name: 'Grillz 5',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-5.jpg' },
+  { type: 'custom', name: 'Grillz 13',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.JPG' },
+  { type: 'custom', name: 'Grillz 14',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-14.JPG' },
+  { type: 'custom', name: 'Grillz 15',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-15.JPG' },
+  { type: 'custom', name: 'Grillz 16',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-16.JPG' },
 ];
 
-const INITIAL = 6;
+const INITIAL = 9;
 let showAll = false;
 
 function renderGallery(filter) {
