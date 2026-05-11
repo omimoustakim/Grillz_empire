@@ -110,22 +110,22 @@ document.querySelectorAll('.stat-num').forEach(el => statObs.observe(el));
 
 /* ── GALERIE ── */
 const galleryData = [
-  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-1.PNG' },
+  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-1.png' },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-2.jpeg' },
-  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-3.PNG' },
-  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-4.PNG' },
+  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-3.png' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-4.png' },
   { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-5.jpg' },
   { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-6.jpeg' },
   { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-7.jpeg' },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-8.jpeg' },
   { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-9.jpeg' },
   { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-10.jpeg' },
-  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.JPG' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.jpeg' },
   { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-12.jpg' },
-  { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.JPG' },
-  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-14.JPG' },
-  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-15.JPG' },
-  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-16.JPG' },
+  { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-14.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-15.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-16.jpeg' },
 ];
 
 const INITIAL = 9;
@@ -183,14 +183,14 @@ document.querySelectorAll('.tab').forEach(btn => {
 
 /* ── AVIS ── */
 const reviews = [
-  { name: 'Kofi A.',   loc: 'Accra, Ghana',           text: 'Qualite incroyable ! Mes grillz en Gold sont parfaits. Service rapide et professionnel.',            stars: 5, init: 'K' },
-  { name: 'Ama S.',    loc: 'Lome, Togo',              text: 'J\'adore mon grillz Open Face ! Exactement ce que je voulais. Tout le monde me pose des questions !', stars: 5, init: 'A' },
-  { name: 'Prince D.', loc: 'Cotonou, Benin',          text: 'Iced Out - absolument royal. Livraison rapide et emballage tres professionnel.',                     stars: 5, init: 'P' },
-  { name: 'Fatou M.',  loc: 'Dakar, Senegal',          text: 'Mon grillz personnalise est magnifique. L\'equipe tres patiente pour creer exactement ce que je voulais.', stars: 5, init: 'F' },
-  { name: 'Yao B.',    loc: 'Abidjan, Cote d\'Ivoire', text: 'Grillz Empire c\'est THE reference en Afrique de l\'Ouest. Qualite irreprochable !',                stars: 5, init: 'Y' },
-  { name: 'Nadia K.',  loc: 'Lome, Togo',              text: 'Commande pour mon anniversaire — qualite exceptionnelle. 100% recommande !',                         stars: 5, init: 'N' },
-  { name: 'Mawuli T.', loc: 'Kara, Togo',              text: 'Chrome-Cobalt Solid. Le fitting etait parfait, rien de genants. Parfait !',                          stars: 5, init: 'M' },
-  { name: 'Aissa R.',  loc: 'Niamey, Niger',           text: 'Livraison en temps, emballage luxueux, grillz parfait. Grillz Empire tient ses promesses !',         stars: 5, init: 'A' },
+  { name: 'Kofi A.',   loc: 'Lome, Togo',              text: 'Qualite incroyable ! Mes grillz en Gold sont parfaits. Service rapide et professionnel.',            stars: 5, init: 'K' },
+  { name: 'Ama S.',    loc: 'Paris, France',            text: 'J\'adore mon grillz Open Face ! Exactement ce que je voulais. Tout le monde me pose des questions !', stars: 5, init: 'A' },
+  { name: 'Prince D.', loc: 'Cotonou, Benin',           text: 'Iced Out - absolument royal. Livraison rapide et emballage tres professionnel.',                     stars: 5, init: 'P' },
+  { name: 'Fatou M.',  loc: 'Berlin, Allemagne',        text: 'Mon grillz personnalise est magnifique. L\'equipe tres patiente pour creer exactement ce que je voulais.', stars: 5, init: 'F' },
+  { name: 'Yao B.',    loc: 'New York, USA',            text: 'Grillz Empire c\'est THE reference en Afrique de l\'Ouest. Qualite irreprochable !',                stars: 5, init: 'Y' },
+  { name: 'Nadia K.',  loc: 'Lome, Togo',               text: 'Commande pour mon anniversaire — qualite exceptionnelle. 100% recommande !',                         stars: 5, init: 'N' },
+  { name: 'Mawuli T.', loc: 'Cotonou, Benin',           text: 'Chrome-Cobalt Solid. Le fitting etait parfait, rien de genants. Parfait !',                          stars: 5, init: 'M' },
+  { name: 'Aissa R.',  loc: 'Lyon, France',             text: 'Livraison en temps, emballage luxueux, grillz parfait. Grillz Empire tient ses promesses !',         stars: 5, init: 'A' },
 ];
 
 const track = document.getElementById('reviewsTrack');
