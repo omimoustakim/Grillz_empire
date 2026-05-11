@@ -110,22 +110,22 @@ document.querySelectorAll('.stat-num').forEach(el => statObs.observe(el));
 
 /* ── GALERIE ── */
 const galleryData = [
-  { type: 'chrome', name: 'Chrome Solid',     desc: 'Chrome-Cobalt – 6 dents',    img: 'Nos-realisation/grillz-1.PNG' },
-  { type: 'chrome', name: 'Chrome Full Set',  desc: 'Chrome-Cobalt – Haut & Bas', img: 'Nos-realisation/grillz-2.jpeg' },
+  { type: 'chrome', name: 'Custom',     desc: 'Chrome-Cobalt – 6 dents',    img: 'Nos-realisation/grillz-1.PNG' },
+  { type: 'chrome', name: 'Custom',  desc: 'Chrome-Cobalt – Haut & Bas', img: 'Nos-realisation/grillz-2.jpeg' },
   { type: 'chrome', name: 'Chrome Open Face', desc: 'Chrome-Cobalt – Open Face',  img: 'Nos-realisation/grillz-7.jpeg' },
-  { type: 'chrome', name: 'Chrome Solid',     desc: 'Chrome-Cobalt – 6 dents',    img: 'Nos-realisation/grillz-10.jpeg' },
-  { type: 'gold',   name: 'Gold Solid',       desc: 'Gold – Finition brillant',   img: 'Nos-realisation/grillz-3.PNG' },
-  { type: 'gold',   name: 'Gold VVS',         desc: 'Gold – Diamants certifies',  img: 'Nos-realisation/grillz-4.PNG' },
-  { type: 'gold',   name: 'Gold Rose',        desc: 'Gold – Sur mesure',          img: 'Nos-realisation/grillz-8.jpeg' },
+  { type: 'Gold', name: 'Chrome Solid',     desc: 'Chrome-Cobalt – 6 dents',    img: 'Nos-realisation/grillz-10.jpeg' },
+  { type: 'gold',   name: 'Custom',       desc: 'Gold – Finition brillant',   img: 'Nos-realisation/grillz-3.PNG' },
+  { type: 'Chrome',   name: 'Gold VVS',         desc: 'Gold – Diamants certifies',  img: 'Nos-realisation/grillz-4.PNG' },
+  { type: 'Chrome',   name: 'Gold Rose',        desc: 'Gold – Sur mesure',          img: 'Nos-realisation/grillz-8.jpeg' },
   { type: 'custom', name: 'Drip Pattern',     desc: 'Style exclusif',             img: 'Nos-realisation/grillz-6.jpeg' },
   { type: 'custom', name: 'Initiales',        desc: 'Identite unique',            img: 'Nos-realisation/grillz-9.jpeg' },
-  { type: 'custom', name: 'Grillz 11',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.JPG' },
+  { type: 'Chrome', name: 'Grillz 11',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.JPG' },
   { type: 'custom', name: 'Grillz 12',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-12.jpg' },
   { type: 'custom', name: 'Grillz 5',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-5.jpg' },
-  { type: 'custom', name: 'Grillz 13',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.JPG' },
-  { type: 'custom', name: 'Grillz 14',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-14.JPG' },
-  { type: 'custom', name: 'Grillz 15',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-15.JPG' },
-  { type: 'custom', name: 'Grillz 16',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-16.JPG' },
+  { type: 'Gold', name: 'Grillz 13',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.JPG' },
+  { type: 'Chrome', name: 'Grillz 14',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-14.JPG' },
+  { type: 'Chrome', name: 'Grillz 15',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-15.JPG' },
+  { type: 'Chrome', name: 'Grillz 16',        desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-16.JPG' },
 ];
 
 const INITIAL = 9;
