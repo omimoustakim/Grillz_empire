@@ -126,8 +126,13 @@
     <button class="tab" data-filter="gold">Gold</button>
     <button class="tab" data-filter="custom">Custom</button>
   </div>
-  <div class="gallery" id="gallery"></div>
-  <div class="gallery-more" id="galleryMore">
+  <div class="gallery-slider-wrap">
+    <div class="gallery-track" id="galleryTrack"></div>
+  </div>
+  <div class="gallery-more reveal-up" id="galleryMore" style="display:none">
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+  <div class="gallery-toggle reveal-up">
     <button class="btn-outline" id="galleryBtn" onclick="toggleGallery()">Voir plus ↓</button>
   </div>
   <div class="realisations-cta reveal-up">

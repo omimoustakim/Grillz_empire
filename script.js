@@ -129,43 +129,61 @@ const galleryData = [
 ];
 
 const INITIAL = 9;
-let showAll = false;
+let galleryOpen = false;
 
 function renderGallery(filter) {
-  showAll = false;
-  const grid = document.getElementById('gallery');
-  const btn  = document.getElementById('galleryBtn');
-  grid.innerHTML = '';
+  const track = document.getElementById('galleryTrack');
+  const grid  = document.getElementById('galleryGrid');
+  track.innerHTML = '';
+  grid.innerHTML  = '';
 
   const items = filter === 'all' ? galleryData : galleryData.filter(g => g.type === filter);
+  const allItems = [...items, ...items];
 
-  items.forEach((item, i) => {
+  // Slider
+  allItems.forEach((item) => {
     const div = document.createElement('div');
-    div.className = 'gallery-item' + (i >= INITIAL ? ' hidden' : '');
+    div.className = 'gallery-item';
     div.innerHTML = item.img
       ? `<img src="${item.img}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder><span>📷</span><p>Photo a venir</p></div>'">
+         <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
+         <div class="gallery-tag gallery-tag-${item.type}">${item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom'}</div>`
+      : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
+    track.appendChild(div);
+  });
+
+  // Grille voir plus
+  items.forEach((item) => {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    div.innerHTML = item.img
+      ? `<img src="${item.img}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder><span>📷</span><p>Photo a venir</p></div>'">
+         <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
          <div class="gallery-tag gallery-tag-${item.type}">${item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom'}</div>`
       : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
     grid.appendChild(div);
   });
 
-  const moreWrap = document.getElementById('galleryMore');
-  moreWrap.style.display = items.length > INITIAL ? 'block' : 'none';
-  if (btn) btn.textContent = 'Voir plus ↓';
+  // Reset état
+  galleryOpen = false;
+  document.getElementById('galleryMore').style.display = 'none';
+  document.getElementById('galleryBtn').textContent = 'Voir plus ↓';
 }
 
 function toggleGallery() {
-  const btn = document.getElementById('galleryBtn');
-  if (!showAll) {
-    document.querySelectorAll('.gallery-item.hidden').forEach(el => el.classList.remove('hidden'));
-    showAll = true;
-    btn.textContent = 'Reduire ↑';
+  const btn   = document.getElementById('galleryBtn');
+  const more  = document.getElementById('galleryMore');
+  const sliderWrap = document.querySelector('.gallery-slider-wrap');
+  if (!galleryOpen) {
+    more.style.display = 'block';
+    sliderWrap.style.display = 'none';
+    btn.textContent = 'Réduire ↑';
+    galleryOpen = true;
   } else {
-    document.querySelectorAll('.gallery-item').forEach((el, i) => {
-      if (i >= INITIAL) el.classList.add('hidden');
-    });
-    showAll = false;
+    more.style.display = 'none';
+    sliderWrap.style.display = 'block';
     btn.textContent = 'Voir plus ↓';
+    galleryOpen = false;
     document.getElementById('realisations').scrollIntoView({ behavior: 'smooth' });
   }
 }
