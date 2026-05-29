@@ -3,41 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grillz Empire - Grillz personnalisés au Togo et Benin</title>
-  <meta name="description" content="Grillz dentaires sur mesure en Chrome-Cobalt et Gold. Fabrication artisanale à Lomé, Togo et Cotonou, Bénin. À partir de 30 000 FCFA. Livraison partout en Afrique et dans le monde.">
-  <meta name="keywords" content="grillz, grillz sur mesure, grillz Togo, grillz Lomé, grillz Bénin, grillz Cotonou, grillz or, grillz chrome, dental grillz, grillz Afrique">
-  <meta name="author" content="Grillz Empire">
-  <meta property="og:title" content="Grillz Empire – Grillz sur mesure à Lomé et Cotonou">
-  <meta property="og:description" content="Grillz dentaires sur mesure en Chrome-Cobalt et Gold. À partir de 30 000 FCFA. Livraison partout.">
-  <meta property="og:image" content="Nos-realisation/grillz-logo/logo.jpeg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://omimoustakim.github.io/Grillz_empire">
+  <title>Infos &amp; Contact — Grillz Empire</title>
+  <meta name="description" content="Processus, tarifs, avis, collaborations et contact Grillz Empire. Grillz Chrome-Cobalt, Gold, Iced Out.">
   <link rel="icon" type="image/jpeg" href="Nos-realisation/grillz-logo/logo.jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <meta name="google-site-verification" content="OyPe_VDb3-Lu2IEJ_CyMFKRpGT6mOoGhkqpga_eH4Nk" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QVEH9DJR4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3QVEH9DJR4');
-  </script>
 </head>
 <body>
 
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <img src="Nos-realisation/grillz-logo/logo.jpeg" alt="Grillz Empire">
   </a>
   <ul class="nav-links">
-    <li><a href="#realisations">Réalisations</a></li>
-    <li><a href="#process">Comment ça marche</a></li>
-    <li><a href="#prix">Tarifs</a></li>
-    <li><a href="#avis">Avis</a></li>
-    <li><a href="#collab">Collabs</a></li>
-    <li><a href="#contact" class="nav-cta">Commander</a></li>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="contact.html">Infos &amp; Contact</a></li>
+    <li><a href="https://wa.me/22871107392" class="nav-cta"><i class="fab fa-whatsapp"></i> Commander</a></li>
   </ul>
   <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
@@ -45,93 +27,17 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="#realisations" class="mobile-link">Réalisations</a>
-  <a href="#process" class="mobile-link">Comment ça marche</a>
-  <a href="#prix" class="mobile-link">Tarifs</a>
-  <a href="#avis" class="mobile-link">Avis</a>
-  <a href="#collab" class="mobile-link">Collabs</a>
-  <a href="#contact" class="mobile-link">Commander</a>
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="index.html" class="mobile-link">Accueil</a>
+  <a href="contact.html" class="mobile-link">Infos &amp; Contact</a>
+  <a href="https://wa.me/22871107392" class="mobile-link">Commander</a>
 </div>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<section id="hero">
-  <div class="hero-bg"></div>
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="Nos-realisation/video/hero.mp4" type="video/mp4">
-  </video>
-  <div class="hero-video-overlay"></div>
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-particles" id="particles"></div>
-  <div class="hero-content">
-    <p class="hero-tag">✦ TAWFIK & MOUSTAHAB ✦</p>
-    <h1 class="hero-title">
-      <span class="line-1">Bienvenu à</span>
-      <span>Grillz Empire</span>
-    </h1>
-
-    <div class="hero-btns">
-      <a href="#contact" class="btn-gold">
-        <i class="fab fa-whatsapp"></i> Commander maintenant
-      </a>
-      <a href="#realisations" class="btn-outline">Voir les réalisations</a>
-    </div>
-    <div class="hero-badges">
-      <div class="hero-badge">✦ À partir de 30 000 FCFA</div>
-      <div class="hero-badge">✦ Garantie 06 mois</div>
-      <div class="hero-badge">✦ Livraison partout</div>
-    </div>
-  </div>
-  <div class="hero-scroll"><div class="scroll-dot"></div></div>
-</section>
-
-<div id="stats">
-  <div class="stats-grid">
-    <div class="stat-item reveal-up">
-      <span class="stat-num" data-target="100">0</span><span class="stat-suf">+</span>
-      <p>Clients satisfaits</p>
-    </div>
-    <div class="stat-item reveal-up">
-      <span class="stat-num" data-target="2">0</span><span class="stat-suf">ans</span>
-      <p>D'expérience</p>
-    </div>
-    <div class="stat-item reveal-up">
-      <span class="stat-num" data-target="7">0</span><span class="stat-suf">jour</span>
-      <p>Délai de livraison</p>
-    </div>
-    <div class="stat-item reveal-up">
-      <span class="stat-num" data-target="100">0</span><span class="stat-suf">%</span>
-      <p>Sur mesure</p>
-    </div>
-  </div>
-</div>
-
-<section id="realisations">
-  <div class="section-header reveal-up">
-    <span class="section-tag">Notre travail</span>
-    <h2>Nos Réalisations</h2>
-    <p class="section-desc">Chaque pièce est unique. Voici ce qu'on a créé pour nos clients.</p>
-    <div class="gold-bar"></div>
-  </div>
-  <div class="filter-tabs reveal-up">
-    <button class="tab active" data-filter="all">Tout</button>
-    <button class="tab" data-filter="chrome">Chrome-Cobalt</button>
-    <button class="tab" data-filter="gold">Gold</button>
-    <button class="tab" data-filter="custom">Custom</button>
-  </div>
-  <div class="gallery-slider-wrap">
-    <div class="gallery-track" id="galleryTrack"></div>
-  </div>
-  <div class="gallery-more reveal-up" id="galleryMore" style="display:none">
-    <div class="gallery-grid" id="galleryGrid"></div>
-  </div>
-  <div class="gallery-toggle reveal-up">
-    <button class="btn-outline" id="galleryBtn" onclick="toggleGallery()">Voir plus ↓</button>
-  </div>
-  <div class="realisations-cta reveal-up">
-    <a href="https://wa.me/22871107392?text=Bonjour%2C%20j%27ai%20vu%20vos%20r%C3%A9alisations%20et%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="btn-gold">
-      <i class="fab fa-whatsapp"></i> Je veux le même
-    </a>
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Infos &amp; Contact</h1>
+    <p>Processus, tarifs, avis &amp; contact</p>
   </div>
 </section>
 
@@ -186,6 +92,7 @@
     <div class="gold-bar"></div>
   </div>
   <div class="prix-grid">
+
     <div class="prix-card reveal-up">
       <div class="prix-icon">🦷</div>
       <h3>Chrome-Cobalt</h3>
@@ -204,6 +111,7 @@
         <i class="fab fa-whatsapp"></i> Commander
       </a>
     </div>
+
     <div class="prix-card prix-card-featured reveal-up">
       <div class="prix-badge">⭐ Populaire</div>
       <div class="prix-icon">👑</div>
@@ -223,6 +131,7 @@
         <i class="fab fa-whatsapp"></i> Commander
       </a>
     </div>
+
     <div class="prix-card reveal-up">
       <div class="prix-icon">💎</div>
       <h3>Iced Out &amp; Custom</h3>
@@ -240,6 +149,7 @@
         <i class="fab fa-whatsapp"></i> Demander un devis
       </a>
     </div>
+
   </div>
   <p class="prix-note reveal-up">* Les prix varient selon le nombre de dents et les options choisies. Contactez-nous pour un devis précis.</p>
 </section>
@@ -257,85 +167,6 @@
   </div>
   <div class="reviews-wrapper">
     <div class="reviews-track" id="reviewsTrack"></div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="section-header reveal-up">
-    <span class="section-tag">On est là</span>
-    <h2>Nous Contacter</h2>
-    <p class="section-desc">Prêt à commander ? Une question ? On répond vite.</p>
-    <div class="gold-bar"></div>
-  </div>
-  <div class="contact-layout">
-    <div class="contact-main reveal-up">
-      <a href="https://wa.me/22871107392?text=Bonjour%20Grillz%20Empire%2C%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="contact-big-btn">
-        <i class="fab fa-whatsapp"></i>
-        <div>
-          <strong>WhatsApp — Togo</strong>
-          <span>+228 71 10 73 92 — Réponse rapide</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
-      <a href="https://wa.me/2290197541303?text=Bonjour%20Grillz%20Empire%2C%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="contact-big-btn">
-        <i class="fab fa-whatsapp"></i>
-        <div>
-          <strong>WhatsApp — Bénin</strong>
-          <span>+229 01 97 54 13 03 — Réponse rapide</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
-      <a href="https://www.instagram.com/grillz_empire" target="_blank" class="contact-big-btn contact-insta">
-        <i class="fab fa-instagram"></i>
-        <div>
-          <strong>Suivre sur Instagram</strong>
-          <span>@grillz_empire — Nos dernières créations</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
-      <a href="https://www.tiktok.com/@grillz.empire" target="_blank" class="contact-big-btn contact-tiktok">
-        <i class="fab fa-tiktok"></i>
-        <div>
-          <strong>Suivre sur TikTok</strong>
-          <span>@grillz.empire — Vidéos de fabrication</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
-    </div>
-    <div class="contact-info reveal-up">
-      <div class="contact-info-item">
-        <span>📍</span>
-        <div>
-          <strong>Localisation</strong>
-          <p>Lomé, Togo</p>
-          <small>Rendez-vous sur place pour la prise d'empreinte</small>
-          <div class="map-wrap">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.2139410313407!2d1.1986795749904937!3d6.235506093752723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTQnMDcuOCJOIDHCsDEyJzA0LjUiRQ!5e0!3m2!1sfr!2stg!4v1777987128612!5m2!1sfr!2stg" width="100%" height="200" style="border:0;display:block;width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-      <div class="contact-info-item">
-        <span>⏰</span>
-        <div>
-          <strong>Disponibilité</strong>
-          <p>7j/7 — 9h à 22h</p>
-        </div>
-      </div>
-      <div class="contact-info-item">
-        <span>🚚</span>
-        <div>
-          <strong>Livraison</strong>
-          <p>Partout dans le monde</p>
-        </div>
-      </div>
-      <div class="contact-info-item">
-        <span>📧</span>
-        <div>
-          <strong>Email</strong>
-          <p>grillzempire94@gmail.com</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -421,6 +252,85 @@
   </div>
 </section>
 
+<section id="contact">
+  <div class="section-header reveal-up">
+    <span class="section-tag">On est là</span>
+    <h2>Nous Contacter</h2>
+    <p class="section-desc">Prêt à commander ? Une question ? On répond vite.</p>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="contact-layout">
+    <div class="contact-main reveal-up">
+      <a href="https://wa.me/22871107392?text=Bonjour%20Grillz%20Empire%2C%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="contact-big-btn">
+        <i class="fab fa-whatsapp"></i>
+        <div>
+          <strong>WhatsApp — Togo</strong>
+          <span>+228 71 10 73 92 — Réponse rapide</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://wa.me/2290197541303?text=Bonjour%20Grillz%20Empire%2C%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="contact-big-btn">
+        <i class="fab fa-whatsapp"></i>
+        <div>
+          <strong>WhatsApp — Bénin</strong>
+          <span>+229 01 97 54 13 03 — Réponse rapide</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://www.instagram.com/grillz_empire" target="_blank" class="contact-big-btn contact-insta">
+        <i class="fab fa-instagram"></i>
+        <div>
+          <strong>Suivre sur Instagram</strong>
+          <span>@grillz_empire — Nos dernières créations</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://www.tiktok.com/@grillz.empire" target="_blank" class="contact-big-btn contact-tiktok">
+        <i class="fab fa-tiktok"></i>
+        <div>
+          <strong>Suivre sur TikTok</strong>
+          <span>@grillz.empire — Vidéos de fabrication</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+    <div class="contact-info reveal-up">
+      <div class="contact-info-item">
+        <span>📍</span>
+        <div>
+          <strong>Localisation</strong>
+          <p>Lomé, Togo</p>
+          <small>Rendez-vous sur place pour la prise d'empreinte</small>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.2139410313407!2d1.1986795749904937!3d6.235506093752723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTQnMDcuOCJOIDHCsDEyJzA0LjUiRQ!5e0!3m2!1sfr!2stg!4v1777987128612!5m2!1sfr!2stg" width="100%" height="200" style="border:0;display:block;width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <span>⏰</span>
+        <div>
+          <strong>Disponibilité</strong>
+          <p>7j/7 — 9h à 22h</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <span>🚚</span>
+        <div>
+          <strong>Livraison</strong>
+          <p>Partout dans le monde</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <span>📧</span>
+        <div>
+          <strong>Email</strong>
+          <p>grillzempire94@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -434,14 +344,12 @@
     </div>
     <div class="footer-nav">
       <h4>Navigation</h4>
-      <a href="#realisations">Réalisations</a>
-      <a href="#process">Comment ça marche</a>
-      <a href="#prix">Tarifs</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Accueil</a>
+      <a href="index.html#realisations">Réalisations</a>
+      <a href="contact.html">Infos &amp; Contact</a>
     </div>
     <div class="footer-nav">
-      <h4>Commander</h4>
+      <h4>Commandes</h4>
       <a href="https://wa.me/22871107392?text=Chrome-Cobalt" target="_blank">Grillz Chrome-Cobalt</a>
       <a href="https://wa.me/22871107392?text=Gold" target="_blank">Grillz Gold</a>
       <a href="https://wa.me/22871107392?text=Iced+Out" target="_blank">Iced Out</a>
