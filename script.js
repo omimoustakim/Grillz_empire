@@ -105,34 +105,39 @@ const statObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.stat-num').forEach(el => statObs.observe(el));
 
 /* ── GALERIE ── */
+const galleryData = [
+  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-1.png' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-2.jpeg' },
+  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-3.png' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-4.png' },
+  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-5.jpg' },
+  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-6.jpeg' },
+  { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-7.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-8.jpeg' },
+  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-9.jpeg' },
+  { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-10.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.jpeg' },
+  { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-12.jpg' },
+  { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-14.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-15.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-16.jpeg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-17.jpg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-18.jpg' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-19.jpg' },
+];
+
 const galleryTrack = document.getElementById('galleryTrack');
 if (galleryTrack) {
-  const galleryData = [
-    { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-1.png' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-2.jpeg' },
-    { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-3.png' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-4.png' },
-    { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-5.jpg' },
-    { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-6.jpeg' },
-    { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-7.jpeg' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-8.jpeg' },
-    { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-9.jpeg' },
-    { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-10.jpeg' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-11.jpeg' },
-    { type: 'custom', name: 'Custom',         desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-12.jpg' },
-    { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-13.jpeg' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-14.jpeg' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-15.jpeg' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-16.jpeg' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-17.jpg' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-18.jpg' },
-    { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-19.jpg' },
-  ];
-
-  const INITIAL = 9;
+  let activeFilter = 'all';
   let galleryOpen = false;
 
+  function getTag(item) {
+    return item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom';
+  }
+
   function renderGallery(filter) {
+    activeFilter = filter;
     const track = document.getElementById('galleryTrack');
     const grid  = document.getElementById('galleryGrid');
     track.innerHTML = '';
@@ -141,25 +146,29 @@ if (galleryTrack) {
     const items = filter === 'all' ? galleryData : galleryData.filter(g => g.type === filter);
     const allItems = [...items, ...items];
 
-    allItems.forEach((item) => {
+    allItems.forEach((item, i) => {
       const div = document.createElement('div');
       div.className = 'gallery-item';
+      const tag = getTag(item);
       div.innerHTML = item.img
-        ? `<img src="${item.img}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder><span>📷</span><p>Photo a venir</p></div>'">
+        ? `<img src="${item.img}" alt="${item.name}" onerror="this.classList.add('broken')">
            <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
-           <div class="gallery-tag gallery-tag-${item.type}">${item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom'}</div>`
+           <div class="gallery-tag gallery-tag-${item.type}">${tag}</div>`
         : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
+      if (item.img) div.addEventListener('click', () => openLightbox(i % items.length));
       track.appendChild(div);
     });
 
-    items.forEach((item) => {
+    items.forEach((item, i) => {
       const div = document.createElement('div');
       div.className = 'gallery-item';
+      const tag = getTag(item);
       div.innerHTML = item.img
-        ? `<img src="${item.img}" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder><span>📷</span><p>Photo a venir</p></div>'">
+        ? `<img src="${item.img}" alt="${item.name}" onerror="this.classList.add('broken')">
            <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
-           <div class="gallery-tag gallery-tag-${item.type}">${item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom'}</div>`
+           <div class="gallery-tag gallery-tag-${item.type}">${tag}</div>`
         : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
+      if (item.img) div.addEventListener('click', () => openLightbox(i));
       grid.appendChild(div);
     });
 
@@ -227,6 +236,162 @@ if (reviewsTrack) {
       </div>`;
   });
 }
+
+/* ── LIGHTBOX ── */
+const lightbox    = document.getElementById('lightbox');
+const lightboxImgWrap = document.querySelector('.lightbox-image-wrap');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxTag = document.getElementById('lightboxTag');
+const lightboxName= document.getElementById('lightboxName');
+const lightboxDesc= document.getElementById('lightboxDesc');
+const lightboxCnt = document.getElementById('lightboxCounter');
+let lightboxIndex = 0;
+let zoomScale = 1, zoomX = 0, zoomY = 0;
+let isDragging = false, startX, startY;
+
+function resetZoom() {
+  zoomScale = 1; zoomX = 0; zoomY = 0;
+  applyZoom();
+}
+
+function applyZoom() {
+  lightboxImg.style.transform = `translate(${zoomX}px, ${zoomY}px) scale(${zoomScale})`;
+  lightboxImg.style.cursor = zoomScale > 1 ? 'grab' : 'zoom-in';
+}
+
+function getLightboxItems() {
+  const filter = typeof activeFilter !== 'undefined' ? activeFilter : 'all';
+  return filter === 'all' ? galleryData : galleryData.filter(g => g.type === filter);
+}
+
+function renderLightbox(index) {
+  resetZoom();
+  const items = getLightboxItems();
+  if (!items.length) return;
+  lightboxIndex = (index + items.length) % items.length;
+  const item = items[lightboxIndex];
+  const tag = item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom';
+  lightboxImg.src = item.img;
+  lightboxTag.textContent = tag;
+  lightboxTag.className = 'lightbox-tag ' + (tag === 'Chrome-Cobalt' ? 'chrome' : tag.toLowerCase());
+  lightboxName.textContent = item.name;
+  lightboxDesc.textContent = item.desc;
+  lightboxCnt.textContent = `${lightboxIndex + 1} / ${items.length}`;
+}
+
+function openLightbox(index) {
+  renderLightbox(index);
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  resetZoom();
+}
+
+function navigateLightbox(dir) {
+  renderLightbox(lightboxIndex + dir);
+}
+
+lightboxImg.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (zoomScale > 1) { resetZoom(); return; }
+  const rect = lightboxImgWrap.getBoundingClientRect();
+  const px = (e.clientX - rect.left) / rect.width;
+  const py = (e.clientY - rect.top) / rect.height;
+  zoomScale = 2.5;
+  const maxX = (zoomScale - 1) * rect.width / 2;
+  const maxY = (zoomScale - 1) * rect.height / 2;
+  zoomX = -(px - .5) * rect.width * (zoomScale - 1);
+  zoomY = -(py - .5) * rect.height * (zoomScale - 1);
+  zoomX = Math.max(-maxX, Math.min(maxX, zoomX));
+  zoomY = Math.max(-maxY, Math.min(maxY, zoomY));
+  applyZoom();
+});
+
+lightboxImg.addEventListener('mousedown', (e) => {
+  if (zoomScale <= 1) return;
+  isDragging = true; startX = e.clientX - zoomX; startY = e.clientY - zoomY;
+  lightboxImg.style.cursor = 'grabbing';
+  e.preventDefault();
+});
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  zoomX = e.clientX - startX; zoomY = e.clientY - startY;
+  applyZoom();
+});
+document.addEventListener('mouseup', () => {
+  if (!isDragging) return;
+  isDragging = false;
+  lightboxImg.style.cursor = zoomScale > 1 ? 'grab' : 'zoom-in';
+});
+
+let lastTouchDist = 0;
+lightboxImg.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 2) {
+    const dx = e.touches[0].clientX - e.touches[1].clientX;
+    const dy = e.touches[0].clientY - e.touches[1].clientY;
+    lastTouchDist = Math.hypot(dx, dy);
+  }
+}, { passive: true });
+lightboxImg.addEventListener('touchmove', (e) => {
+  if (e.touches.length === 2) {
+    e.preventDefault();
+    const dx = e.touches[0].clientX - e.touches[1].clientX;
+    const dy = e.touches[0].clientY - e.touches[1].clientY;
+    const dist = Math.hypot(dx, dy);
+    const delta = dist / lastTouchDist;
+    const rect = lightboxImgWrap.getBoundingClientRect();
+    const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+    const cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+    const px = (cx - rect.left) / rect.width;
+    const py = (cy - rect.top) / rect.height;
+    const newScale = Math.max(1, Math.min(6, zoomScale * delta));
+    if (newScale === 1) { resetZoom(); lastTouchDist = dist; return; }
+    const ratio = newScale / zoomScale;
+    zoomX = px * rect.width * (1 - ratio) + zoomX * ratio;
+    zoomY = py * rect.height * (1 - ratio) + zoomY * ratio;
+    zoomScale = newScale;
+    const maxX = (zoomScale - 1) * rect.width / 2;
+    const maxY = (zoomScale - 1) * rect.height / 2;
+    zoomX = Math.max(-maxX, Math.min(maxX, zoomX));
+    zoomY = Math.max(-maxY, Math.min(maxY, zoomY));
+    applyZoom();
+    lastTouchDist = dist;
+  }
+}, { passive: false });
+
+lightboxImg.addEventListener('wheel', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  e.preventDefault();
+  const rect = lightboxImgWrap.getBoundingClientRect();
+  const px = (e.clientX - rect.left) / rect.width;
+  const py = (e.clientY - rect.top) / rect.height;
+  const delta = e.deltaY > 0 ? .85 : 1.15;
+  const newScale = Math.max(1, Math.min(6, zoomScale * delta));
+  if (newScale === 1) { resetZoom(); return; }
+  const ratio = newScale / zoomScale;
+  zoomX = px * rect.width * (1 - ratio) + zoomX * ratio;
+  zoomY = py * rect.height * (1 - ratio) + zoomY * ratio;
+  zoomScale = newScale;
+  const maxX = (zoomScale - 1) * rect.width / 2;
+  const maxY = (zoomScale - 1) * rect.height / 2;
+  zoomX = Math.max(-maxX, Math.min(maxX, zoomX));
+  zoomY = Math.max(-maxY, Math.min(maxY, zoomY));
+  applyZoom();
+}, { passive: false });
+
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', () => { resetZoom(); navigateLightbox(-1); });
+document.getElementById('lightboxNext').addEventListener('click', () => { resetZoom(); navigateLightbox(1); });
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') { resetZoom(); navigateLightbox(-1); }
+  if (e.key === 'ArrowRight') { resetZoom(); navigateLightbox(1); }
+});
 
 /* ── TOAST ── */
 function showToast(msg) {

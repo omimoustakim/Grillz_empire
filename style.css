@@ -235,6 +235,7 @@ section { padding: 90px 60px; }
   background: var(--dark3); cursor: pointer;
 }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; display: block; }
+.gallery-item img.broken { display: none; }
 .gallery-item:hover img { transform: scale(1.06); }
 .gallery-overlay {
   position: absolute; inset: 0;
@@ -545,6 +546,67 @@ footer { background: var(--night-blue); border-top: 1px solid rgba(201,168,76,.0
 .collab-field textarea:focus { border-color: rgba(201,168,76,.5); }
 .collab-field select option { background: var(--night-blue); color: var(--white); }
 .collab-submit { width: 100%; justify-content: center; margin-top: 4px; }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed; inset: 0; z-index: 6000;
+  background: rgba(0,0,0,.92);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+  padding: 40px;
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox-close {
+  position: absolute; top: 20px; right: 28px;
+  background: none; border: none; color: var(--grey); font-size: 1.6rem;
+  cursor: pointer; z-index: 10; transition: color .3s;
+}
+.lightbox-close:hover { color: var(--white); }
+.lightbox-content {
+  display: flex; gap: 36px; align-items: center;
+  max-width: 900px; width: 100%;
+}
+.lightbox-image-wrap {
+  flex: 1; min-width: 0;
+  max-height: 75vh; overflow: hidden;
+  border: 1px solid rgba(201,168,76,.15);
+  position: relative;
+}
+.lightbox-image-wrap img {
+  width: 100%; height: 100%; object-fit: contain; display: block;
+  transition: transform .2s ease;
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.lightbox-info { flex: 0 0 220px; }
+.lightbox-tag {
+  display: inline-block; font-size: .6rem; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 700; padding: 3px 10px; margin-bottom: 12px;
+}
+.lightbox-tag.chrome { background: #C0C0C0; color: #000; }
+.lightbox-tag.gold   { background: var(--gold); color: #000; }
+.lightbox-tag.custom { background: #555; color: var(--white); }
+.lightbox-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; letter-spacing: 2px; margin-bottom: 8px; }
+.lightbox-info p { color: var(--grey); font-size: .85rem; line-height: 1.6; }
+.lightbox-counter { display: block; margin-top: 16px; font-size: .75rem; color: var(--grey2); letter-spacing: 2px; }
+.lightbox-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.2);
+  color: var(--gold); font-size: 2.2rem; width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 10; transition: all .3s; font-family: serif;
+}
+.lightbox-arrow:hover { background: rgba(201,168,76,.2); border-color: var(--gold); }
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+
+@media (max-width: 768px) {
+  .lightbox { padding: 20px; }
+  .lightbox-content { flex-direction: column; gap: 20px; }
+  .lightbox-info { flex: none; width: 100%; text-align: center; }
+  .lightbox-image-wrap { max-height: 55vh; width: 100%; }
+}
 
 /* ── BOUTON WHATSAPP FLOTTANT ── */
 .wa-float {
