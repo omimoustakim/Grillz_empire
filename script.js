@@ -247,7 +247,7 @@ const lightboxDesc= document.getElementById('lightboxDesc');
 const lightboxCnt = document.getElementById('lightboxCounter');
 let lightboxIndex = 0;
 let zoomScale = 1, zoomX = 0, zoomY = 0;
-let isDragging = false, startX, startY;
+let isDragging = false, didDrag = false, startX, startY;
 
 function resetZoom() {
   zoomScale = 1; zoomX = 0; zoomY = 0;
@@ -296,6 +296,7 @@ function navigateLightbox(dir) {
 }
 
 lightboxImg.addEventListener('click', (e) => {
+  if (didDrag) { didDrag = false; return; }
   e.stopPropagation();
   if (zoomScale > 1) { resetZoom(); return; }
   const rect = lightboxImgWrap.getBoundingClientRect();
@@ -313,12 +314,13 @@ lightboxImg.addEventListener('click', (e) => {
 
 lightboxImg.addEventListener('mousedown', (e) => {
   if (zoomScale <= 1) return;
-  isDragging = true; startX = e.clientX - zoomX; startY = e.clientY - zoomY;
+  isDragging = true; didDrag = false; startX = e.clientX - zoomX; startY = e.clientY - zoomY;
   lightboxImg.style.cursor = 'grabbing';
   e.preventDefault();
 });
 document.addEventListener('mousemove', (e) => {
   if (!isDragging) return;
+  didDrag = true;
   zoomX = e.clientX - startX; zoomY = e.clientY - startY;
   applyZoom();
 });
