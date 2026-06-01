@@ -130,6 +130,10 @@ const galleryData = [
 
 ];
 
+function toWebp(path) {
+  return path.replace(/\.(png|jpe?g)$/i, '.webp');
+}
+
 const galleryTrack = document.getElementById('galleryTrack');
 if (galleryTrack) {
   let activeFilter = 'all';
@@ -137,6 +141,14 @@ if (galleryTrack) {
 
   function getTag(item) {
     return item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom';
+  }
+
+  function galleryHtml(item) {
+    return item.img
+      ? `<picture><source srcset="${toWebp(item.img)}" type="image/webp"><img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.classList.add('broken')"></picture>
+         <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
+         <div class="gallery-tag gallery-tag-${item.type}">${getTag(item)}</div>`
+      : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
   }
 
   function renderGallery(filter) {
@@ -152,12 +164,7 @@ if (galleryTrack) {
     allItems.forEach((item, i) => {
       const div = document.createElement('div');
       div.className = 'gallery-item';
-      const tag = getTag(item);
-      div.innerHTML = item.img
-        ? `<img src="${item.img}" alt="${item.name}" onerror="this.classList.add('broken')">
-           <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
-           <div class="gallery-tag gallery-tag-${item.type}">${tag}</div>`
-        : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
+      div.innerHTML = galleryHtml(item);
       if (item.img) div.addEventListener('click', () => openLightbox(i % items.length));
       track.appendChild(div);
     });
@@ -165,12 +172,7 @@ if (galleryTrack) {
     items.forEach((item, i) => {
       const div = document.createElement('div');
       div.className = 'gallery-item';
-      const tag = getTag(item);
-      div.innerHTML = item.img
-        ? `<img src="${item.img}" alt="${item.name}" onerror="this.classList.add('broken')">
-           <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
-           <div class="gallery-tag gallery-tag-${item.type}">${tag}</div>`
-        : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
+      div.innerHTML = galleryHtml(item);
       if (item.img) div.addEventListener('click', () => openLightbox(i));
       grid.appendChild(div);
     });
@@ -274,7 +276,7 @@ function renderLightbox(index) {
   lightboxIndex = (index + items.length) % items.length;
   const item = items[lightboxIndex];
   const tag = item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom';
-  lightboxImg.src = item.img;
+  lightboxImg.src = toWebp(item.img);
   lightboxTag.textContent = tag;
   lightboxTag.className = 'lightbox-tag ' + (tag === 'Chrome-Cobalt' ? 'chrome' : tag.toLowerCase());
   lightboxName.textContent = item.name;
@@ -398,6 +400,21 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') { resetZoom(); navigateLightbox(1); }
 });
 
+/* ── COOKIE BANNER ── */
+function acceptCookies() {
+  localStorage.setItem('grillz_cookies', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+function refuseCookies() {
+  localStorage.setItem('grillz_cookies', 'refused');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+if (!localStorage.getItem('grillz_cookies')) {
+  setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1200);
+} else {
+  document.getElementById('cookieBanner').remove();
+}
+
 /* ── TOAST ── */
 function showToast(msg) {
   const t = document.getElementById('toast');
@@ -405,6 +422,11 @@ function showToast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+/* ── FAQ ── */
+function toggleFaq(btn) {
+  btn.parentElement.classList.toggle('open');
 }
 
 /* ── FORMULAIRE COLLAB ── */

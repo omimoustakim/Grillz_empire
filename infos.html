@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infos &amp; Contact — Grillz Empire</title>
-  <meta name="description" content="Processus, tarifs, avis, collaborations et contact Grillz Empire. Grillz Chrome-Cobalt, Gold, Iced Out.">
+  <meta name="description" content="Processus, tarifs, avis, collaborations et contact Grillz Empire.">
   <link rel="icon" type="image/jpeg" href="Nos-realisation/grillz-logo/logo.jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <meta name="google-site-verification" content="OyPe_VDb3-Lu2IEJ_CyMFKRpGT6mOoGhkqpga_eH4Nk" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QVEH9DJR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3QVEH9DJR4');
+  </script>
 </head>
 <body>
 
@@ -17,27 +25,36 @@
     <img src="Nos-realisation/grillz-logo/logo.webp" alt="Grillz Empire">
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="contact.html">Infos &amp; Contact</a></li>
-    <li><a href="https://wa.me/22871107392" class="nav-cta"><i class="fab fa-whatsapp"></i> Commander</a></li>
+    <li><a href="index.html#realisations">Réalisations</a></li>
+    <li><a href="#process">Comment ça marche</a></li>
+    <li><a href="#prix">Tarifs</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#collab">Collabs</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Commander</a></li>
   </ul>
-  <button class="hamburger" id="hamburger">
+  <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <button class="mobile-close" id="mobileClose" aria-label="Fermer le menu">✕</button>
   <a href="index.html" class="mobile-link">Accueil</a>
-  <a href="contact.html" class="mobile-link">Infos &amp; Contact</a>
-  <a href="https://wa.me/22871107392" class="mobile-link">Commander</a>
+  <a href="index.html#realisations" class="mobile-link">Réalisations</a>
+  <a href="#process" class="mobile-link">Comment ça marche</a>
+  <a href="#prix" class="mobile-link">Tarifs</a>
+  <a href="#avis" class="mobile-link">Avis</a>
+  <a href="#collab" class="mobile-link">Collabs</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#contact" class="mobile-link">Commander</a>
 </div>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<section class="page-hero">
+<section class="page-hero" id="infos-hero">
   <div class="page-hero-content">
     <h1>Infos &amp; Contact</h1>
-    <p>Processus, tarifs, avis &amp; contact</p>
+    <p>Processus, tarifs, avis, collabs &amp; contact</p>
   </div>
 </section>
 
@@ -74,7 +91,7 @@
       <div class="step-icon">👑</div>
       <div class="step-num-big">04</div>
       <h3>Livraison</h3>
-      <p>Vous récupèrez votre grillz en main propre ou par livraison partout.</p>
+      <p>Vous récupérez votre grillz en main propre ou par livraison partout.</p>
     </div>
   </div>
   <div class="process-cta reveal-up">
@@ -92,7 +109,6 @@
     <div class="gold-bar"></div>
   </div>
   <div class="prix-grid">
-
     <div class="prix-card reveal-up">
       <div class="prix-icon">🦷</div>
       <h3>Chrome-Cobalt</h3>
@@ -111,7 +127,6 @@
         <i class="fab fa-whatsapp"></i> Commander
       </a>
     </div>
-
     <div class="prix-card prix-card-featured reveal-up">
       <div class="prix-badge">⭐ Populaire</div>
       <div class="prix-icon">👑</div>
@@ -131,7 +146,6 @@
         <i class="fab fa-whatsapp"></i> Commander
       </a>
     </div>
-
     <div class="prix-card reveal-up">
       <div class="prix-icon">💎</div>
       <h3>Iced Out &amp; Custom</h3>
@@ -149,7 +163,6 @@
         <i class="fab fa-whatsapp"></i> Demander un devis
       </a>
     </div>
-
   </div>
   <p class="prix-note reveal-up">* Les prix varient selon le nombre de dents et les options choisies. Contactez-nous pour un devis précis.</p>
 </section>
@@ -167,88 +180,6 @@
   </div>
   <div class="reviews-wrapper">
     <div class="reviews-track" id="reviewsTrack"></div>
-  </div>
-</section>
-
-<section id="collab">
-  <div class="section-header reveal-up">
-    <span class="section-tag">Partenariats</span>
-    <h2>On fait des Collabs</h2>
-    <p class="section-desc">Artiste, influenceur, rappeur, barbier ou boutique — on est ouverts à toute collaboration sérieuse.</p>
-    <div class="gold-bar"></div>
-  </div>
-  <div class="collab-grid">
-    <div class="collab-card reveal-up">
-      <div class="collab-icon">🎤</div>
-      <h3>Artistes &amp; Rappeurs</h3>
-      <p>Tu veux un grillz pour ton image ou un partenariat pour tes clips ? On en parle.</p>
-    </div>
-    <div class="collab-card reveal-up">
-      <div class="collab-icon">📱</div>
-      <h3>Influenceurs</h3>
-      <p>Tu as une communauté engagée ? On peut créer quelque chose ensemble.</p>
-    </div>
-    <div class="collab-card reveal-up">
-      <div class="collab-icon">💈</div>
-      <h3>Barbiers &amp; Salons</h3>
-      <p>Tu reçois des clients qui veulent du style ? Propose-leur nos grillz.</p>
-    </div>
-    <div class="collab-card reveal-up">
-      <div class="collab-icon">🏪</div>
-      <h3>Boutiques &amp; Revendeurs</h3>
-      <p>Tu veux revendre nos créations dans ta boutique ? Contacte-nous.</p>
-    </div>
-  </div>
-
-  <div class="collab-form-section reveal-up">
-    <div class="collab-visual">
-      <div class="collab-spin-wrap">
-        <div class="collab-spin-ring"></div>
-        <img src="Nos-realisation/video/form.png" alt="Grillz Empire" class="collab-spin-img">
-      </div>
-      <p class="collab-visual-label">✦ Grillz sur mesure ✦</p>
-    </div>
-
-    <div class="collab-form-wrap">
-      <h3 class="collab-form-title">Propose ta collaboration</h3>
-      <p class="collab-form-sub">Remplis ce formulaire et on te répond dans les 24h.</p>
-      <form class="collab-form" id="collabForm" onsubmit="submitCollabForm(event)">
-        <div class="collab-form-row">
-          <div class="collab-field">
-            <label>Nom / Pseudo</label>
-            <input type="text" name="nom" placeholder="Ton nom ou pseudo" required>
-          </div>
-          <div class="collab-field">
-            <label>Type de profil</label>
-            <select name="type" required>
-              <option value="" disabled selected>Choisir...</option>
-              <option value="Artiste / Rappeur">Artiste / Rappeur</option>
-              <option value="Influenceur">Influenceur</option>
-              <option value="Barbier / Salon">Barbier / Salon</option>
-              <option value="Boutique / Revendeur">Boutique / Revendeur</option>
-              <option value="Autre">Autre</option>
-            </select>
-          </div>
-        </div>
-        <div class="collab-form-row">
-          <div class="collab-field">
-            <label>WhatsApp / Téléphone</label>
-            <input type="tel" name="phone" placeholder="+228 XX XX XX XX" required>
-          </div>
-          <div class="collab-field">
-            <label>Instagram / TikTok (optionnel)</label>
-            <input type="text" name="social" placeholder="@tonpseudo">
-          </div>
-        </div>
-        <div class="collab-field">
-          <label>Ton idée de collab</label>
-          <textarea name="message" rows="4" placeholder="Décris ton projet, ton audience, ce que tu proposes..." required></textarea>
-        </div>
-        <button type="submit" class="btn-gold collab-submit">
-          <i class="fab fa-whatsapp"></i> Envoyer via WhatsApp
-        </button>
-      </form>
-    </div>
   </div>
 </section>
 
@@ -331,25 +262,185 @@
   </div>
 </section>
 
+<section id="collab">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Partenariats</span>
+    <h2>On fait des Collabs</h2>
+    <p class="section-desc">Artiste, influenceur, rappeur, barbier ou boutique — on est ouverts à toute collaboration sérieuse.</p>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="collab-grid">
+    <div class="collab-card reveal-up">
+      <div class="collab-icon">🎤</div>
+      <h3>Artistes &amp; Rappeurs</h3>
+      <p>Tu veux un grillz pour ton image ou un partenariat pour tes clips ? On en parle.</p>
+    </div>
+    <div class="collab-card reveal-up">
+      <div class="collab-icon">📱</div>
+      <h3>Influenceurs</h3>
+      <p>Tu as une communauté engagée ? On peut créer quelque chose ensemble.</p>
+    </div>
+    <div class="collab-card reveal-up">
+      <div class="collab-icon">💈</div>
+      <h3>Barbiers &amp; Salons</h3>
+      <p>Tu reçois des clients qui veulent du style ? Propose-leur nos grillz.</p>
+    </div>
+    <div class="collab-card reveal-up">
+      <div class="collab-icon">🏪</div>
+      <h3>Boutiques &amp; Revendeurs</h3>
+      <p>Tu veux revendre nos créations dans ta boutique ? Contacte-nous.</p>
+    </div>
+  </div>
+
+  <div class="collab-form-section reveal-up">
+    <div class="collab-visual">
+      <div class="collab-spin-wrap">
+        <div class="collab-spin-ring"></div>
+        <img src="Nos-realisation/video/form.webp" alt="Grillz Empire" class="collab-spin-img">
+      </div>
+      <p class="collab-visual-label">✦ Grillz sur mesure ✦</p>
+    </div>
+
+    <div class="collab-form-wrap">
+      <h3 class="collab-form-title">Propose ta collaboration</h3>
+      <p class="collab-form-sub">Remplis ce formulaire et on te répond dans les 24h.</p>
+      <form class="collab-form" id="collabForm" onsubmit="submitCollabForm(event)">
+        <div class="collab-form-row">
+          <div class="collab-field">
+            <label>Nom / Pseudo</label>
+            <input type="text" name="nom" placeholder="Ton nom ou pseudo" required>
+          </div>
+          <div class="collab-field">
+            <label>Type de profil</label>
+            <select name="type" required>
+              <option value="" disabled selected>Choisir...</option>
+              <option value="Artiste / Rappeur">Artiste / Rappeur</option>
+              <option value="Influenceur">Influenceur</option>
+              <option value="Barbier / Salon">Barbier / Salon</option>
+              <option value="Boutique / Revendeur">Boutique / Revendeur</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="collab-form-row">
+          <div class="collab-field">
+            <label>WhatsApp / Téléphone</label>
+            <input type="tel" name="phone" placeholder="+228 XX XX XX XX" required>
+          </div>
+          <div class="collab-field">
+            <label>Instagram / TikTok (optionnel)</label>
+            <input type="text" name="social" placeholder="@tonpseudo">
+          </div>
+        </div>
+        <div class="collab-field">
+          <label>Ton idée de collab</label>
+          <textarea name="message" rows="4" placeholder="Décris ton projet, ton audience, ce que tu proposes..." required></textarea>
+        </div>
+        <button type="submit" class="btn-gold collab-submit">
+          <i class="fab fa-whatsapp"></i> Envoyer via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-header reveal-up">
+    <span class="section-tag">Questions</span>
+    <h2>FAQ</h2>
+    <p class="section-desc">Les réponses à vos questions les plus fréquentes.</p>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal-up">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Comment se passe la prise d'empreinte ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>On vous reçoit à Lomé pour une prise d'empreinte dentaire professionnelle. Si vous êtes à l'étranger, on vous guide avec un kit d'empreinte à faire chez vous et à nous renvoyer.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal-up">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Quels sont les délais de livraison ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Comptez 7 jours après validation de l'empreinte. Livraison express possible (contactez-nous).</p>
+      </div>
+    </div>
+    <div class="faq-item reveal-up">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Comment entretenir ma grillz ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Nettoyez-la avec une brosse à dents douce et de l'eau tiède. Évitez les produits abrasifs. Rangez-la dans sa boîte quand vous ne la portez pas. Un entretien régulier la garde brillante.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal-up">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Est-ce que ça abîme les dents ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Pas du tout. Nos grillz sont fabriqués en Chrome-Cobalt (alliage dentaire) ou en Gold, avec une empreinte précise de vos dents. Ils sont conçus pour être confortables et sans danger.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal-up">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Puis-je commander depuis l'étranger ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Oui ! On livre partout dans le monde. On a déjà envoyé des grillz à Paris, New York, Berlin, Amsterdam et bien d'autres villes. Contactez-nous pour les frais de port.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal-up">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Y a-t-il une garantie ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Oui, toutes nos grillz sont garanties 6 mois contre tout défaut de fabrication.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal-up">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Puis-je retourner ma grillz ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Chaque grillz est fabriquée sur mesure selon votre empreinte, donc les retours ne sont pas possibles. En cas de problème, contactez-nous, on trouve une solution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <span class="footer-logo">GRILLZ EMPIRE</span>
       <p>Grillz dentaires sur mesure. Fabriqué avec passion à Lomé, Togo.</p>
       <div class="footer-socials">
-        <a href="https://wa.me/22871107392" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/grillz_empire" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@grillz.empire" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/22871107392" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/grillz_empire" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@grillz.empire" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
     <div class="footer-nav">
       <h4>Navigation</h4>
       <a href="index.html">Accueil</a>
       <a href="index.html#realisations">Réalisations</a>
-      <a href="contact.html">Infos &amp; Contact</a>
+      <a href="#process">Comment ça marche</a>
+      <a href="#prix">Tarifs</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
     <div class="footer-nav">
-      <h4>Commandes</h4>
+      <h4>Commander</h4>
       <a href="https://wa.me/22871107392?text=Chrome-Cobalt" target="_blank">Grillz Chrome-Cobalt</a>
       <a href="https://wa.me/22871107392?text=Gold" target="_blank">Grillz Gold</a>
       <a href="https://wa.me/22871107392?text=Iced+Out" target="_blank">Iced Out</a>
@@ -360,6 +451,14 @@
     <p>© 2026 Grillz Empire. Tous droits réservés. Lomé, Togo.</p>
   </div>
 </footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Ce site utilise des cookies pour améliorer votre expérience (Google Analytics).</p>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accepter</button>
+    <button class="cookie-btn cookie-refuse" onclick="refuseCookies()">Refuser</button>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
