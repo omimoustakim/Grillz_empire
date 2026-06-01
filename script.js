@@ -424,11 +424,6 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3200);
 }
 
-/* ── FAQ ── */
-function toggleFaq(btn) {
-  btn.parentElement.classList.toggle('open');
-}
-
 /* ── FORMULAIRE COLLAB ── */
 function submitCollabForm(e) {
   e.preventDefault();
