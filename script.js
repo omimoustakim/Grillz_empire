@@ -130,8 +130,8 @@ const galleryData = [
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-22.JPG' },
 ];
 
-function toWebp(path) {
-  return path.replace(/\.(png|jpe?g)$/i, '.webp');
+function imgPath(path) {
+  return path;
 }
 
 const galleryTrack = document.getElementById('galleryTrack');
@@ -145,7 +145,7 @@ if (galleryTrack) {
 
   function galleryHtml(item) {
     return item.img
-      ? `<picture><source srcset="${toWebp(item.img)}" type="image/webp"><img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.classList.add('broken')"></picture>
+      ? `<img src="${imgPath(item.img)}" alt="${item.name}" loading="lazy" onerror="this.classList.add('broken')">
          <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
          <div class="gallery-tag gallery-tag-${item.type}">${getTag(item)}</div>`
       : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
@@ -276,7 +276,7 @@ function renderLightbox(index) {
   lightboxIndex = (index + items.length) % items.length;
   const item = items[lightboxIndex];
   const tag = item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom';
-  lightboxImg.src = toWebp(item.img);
+  lightboxImg.src = imgPath(item.img);
   lightboxTag.textContent = tag;
   lightboxTag.className = 'lightbox-tag ' + (tag === 'Chrome-Cobalt' ? 'chrome' : tag.toLowerCase());
   lightboxName.textContent = item.name;
