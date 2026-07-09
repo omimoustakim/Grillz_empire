@@ -128,7 +128,7 @@ const galleryData = [
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-20.webp' },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-21.webp' },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-22.webp' },
-  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-23.webp' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-23.webp', tall: true },
 ];
 
 function imgPath(path) {
@@ -164,7 +164,7 @@ if (galleryTrack) {
 
     allItems.forEach((item, i) => {
       const div = document.createElement('div');
-      div.className = 'gallery-item';
+      div.className = 'gallery-item' + (item.tall ? ' gallery-item-tall' : '');
       div.innerHTML = galleryHtml(item);
       if (item.img) div.addEventListener('click', () => openLightbox(i % items.length));
       track.appendChild(div);
@@ -172,7 +172,7 @@ if (galleryTrack) {
 
     items.forEach((item, i) => {
       const div = document.createElement('div');
-      div.className = 'gallery-item';
+      div.className = 'gallery-item' + (item.tall ? ' gallery-item-tall' : '');
       div.innerHTML = galleryHtml(item);
       if (item.img) div.addEventListener('click', () => openLightbox(i));
       grid.appendChild(div);
