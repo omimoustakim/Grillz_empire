@@ -15,21 +15,25 @@
   <link rel="icon" type="image/webp" href="Nos-realisation/grillz-logo/logo.webp">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <meta name="google-site-verification" content="OyPe_VDb3-Lu2IEJ_CyMFKRpGT6mOoGhkqpga_eH4Nk" />
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <nav id="navbar">
   <a href="#hero" class="nav-logo">
     <img src="Nos-realisation/grillz-logo/logo.webp" alt="Grillz Empire">
   </a>
   <ul class="nav-links">
-    <li><a href="#realisations">Réalisations</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#prix">Tarifs</a></li>
-    <li><a href="#avis">Avis</a></li>
-    <li><a href="#contact" class="nav-cta">Commander</a></li>
+    <li><a href="#realisations" class="fw-semibold">Réalisations</a></li>
+    <li><a href="#process" class="fw-semibold">Process</a></li>
+    <li><a href="#prix" class="fw-semibold">Tarifs</a></li>
+    <li><a href="#avis" class="fw-semibold">Avis</a></li>
+    <li><a href="#contact" class="nav-cta fw-semibold">Commander</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -55,20 +59,20 @@
   <div class="hero-video-overlay"></div>
   <canvas id="heroCanvas"></canvas>
   <div class="hero-particles" id="particles"></div>
-  <div class="hero-content">
-    <p class="hero-tag">✦ TAWFIK & MOUSTAHAB ✦</p>
-    <h1 class="hero-title">
-      <span class="line-1">Bienvenue à</span>
+  <div class="hero-content d-flex flex-column align-items-center justify-content-center text-center">
+    <p class="hero-tag text-uppercase">✦ TAWFIK & MOUSTAHAB ✦</p>
+    <h1 class="hero-title display-1">
+      <span class="line-1 fw-normal text-uppercase text-light" style="letter-spacing:4px;">Bienvenue à</span>
       <span>Grillz Empire</span>
     </h1>
 
-    <div class="hero-btns">
+    <div class="hero-btns d-flex gap-3 flex-wrap justify-content-center">
       <a href="#contact" class="btn-gold">
         <i class="fab fa-whatsapp"></i> Commander maintenant
       </a>
       <a href="#realisations" class="btn-outline">Voir les réalisations</a>
     </div>
-    <div class="hero-badges">
+    <div class="hero-badges d-flex gap-3 flex-wrap justify-content-center">
       <div class="hero-badge">✦ À partir de 30 000 FCFA</div>
       <div class="hero-badge">✦ Garantie 06 mois</div>
       <div class="hero-badge">✦ Livraison partout</div>
@@ -101,8 +105,8 @@
 <section id="realisations">
   <div class="section-header reveal-up">
     <span class="section-tag">Notre travail</span>
-    <h2>Nos Réalisations</h2>
-    <p class="section-desc">Chaque pièce est unique. Voici ce qu'on a créé pour nos clients.</p>
+    <h2 class="display-3">Nos Réalisations</h2>
+    <p class="section-desc lead">Chaque pièce est unique. Voici ce qu'on a créé pour nos clients.</p>
     <div class="gold-bar"></div>
   </div>
   <div class="filter-tabs reveal-up">
@@ -114,53 +118,53 @@
   <div class="gallery-slider-wrap">
     <div class="gallery-track" id="galleryTrack"></div>
   </div>
-  <div class="gallery-more reveal-up" id="galleryMore" style="display:none">
+  <div class="gallery-more" id="galleryMore" style="display:none">
     <div class="gallery-grid" id="galleryGrid"></div>
   </div>
   <div class="gallery-toggle reveal-up">
     <button class="btn-outline" id="galleryBtn" onclick="toggleGallery()">Voir plus ↓</button>
-  </div>
-  <div class="realisations-cta reveal-up">
-    <a href="https://wa.me/22871107392?text=Bonjour%2C%20j%27ai%20vu%20vos%20r%C3%A9alisations%20et%20je%20voudrais%20commander%20une%20grillz." target="_blank" class="btn-gold">
-      <i class="fab fa-whatsapp"></i> Je veux le même
-    </a>
   </div>
 </section>
 
 <section id="process">
   <div class="section-header reveal-up">
     <span class="section-tag">Le processus</span>
-    <h2>Comment ça marche</h2>
-    <p class="section-desc">Simple, rapide et professionnel. En 4 étapes.</p>
+    <h2 class="display-3">Comment ça marche</h2>
+    <p class="section-desc lead">Simple, rapide et professionnel. En 4 étapes.</p>
     <div class="gold-bar"></div>
   </div>
-  <div class="process-steps">
-    <div class="process-step reveal-up">
-      <div class="step-icon">📲</div>
-      <div class="step-num-big">01</div>
-      <h3>Prise de contact</h3>
-      <p>Vous nous contactez sur WhatsApp. On discute de votre style et de vos envies.</p>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 process-steps">
+    <div class="col">
+      <div class="card-base process-step reveal-up">
+        <div class="card-icon"><i class="bi bi-phone"></i></div>
+        <div class="step-num-big">01</div>
+        <h3>Prise de contact</h3>
+        <p>Vous nous contactez sur WhatsApp. On discute de votre style et de vos envies.</p>
+      </div>
     </div>
-    <div class="process-arrow">→</div>
-    <div class="process-step reveal-up">
-      <div class="step-icon">📍</div>
-      <div class="step-num-big">02</div>
-      <h3>Rendez-vous</h3>
-      <p>Nous fixons un rendez-vous pour la prise d'empreinte dentaire précise.</p>
+    <div class="col">
+      <div class="card-base process-step reveal-up">
+        <div class="card-icon"><i class="bi bi-geo-alt"></i></div>
+        <div class="step-num-big">02</div>
+        <h3>Rendez-vous</h3>
+        <p>Nous fixons un rendez-vous pour la prise d'empreinte dentaire précise.</p>
+      </div>
     </div>
-    <div class="process-arrow">→</div>
-    <div class="process-step reveal-up">
-      <div class="step-icon">⚙️</div>
-      <div class="step-num-big">03</div>
-      <h3>Fabrication</h3>
-      <p>Votre grillz est fabriqué sur mesure avec les matériaux de votre choix. Délai : 7 jours.</p>
+    <div class="col">
+      <div class="card-base process-step reveal-up">
+        <div class="card-icon"><i class="bi bi-gear"></i></div>
+        <div class="step-num-big">03</div>
+        <h3>Fabrication</h3>
+        <p>Votre grillz est fabriqué sur mesure avec les matériaux de votre choix. Délai : 7 jours.</p>
+      </div>
     </div>
-    <div class="process-arrow">→</div>
-    <div class="process-step reveal-up">
-      <div class="step-icon">👑</div>
-      <div class="step-num-big">04</div>
-      <h3>Livraison</h3>
-      <p>Vous récupérez votre grillz en main propre ou par livraison partout.</p>
+    <div class="col">
+      <div class="card-base process-step reveal-up">
+        <div class="card-icon"><i class="bi bi-crown"></i></div>
+        <div class="step-num-big">04</div>
+        <h3>Livraison</h3>
+        <p>Vous récupérez votre grillz en main propre ou par livraison partout.</p>
+      </div>
     </div>
   </div>
   <div class="process-cta reveal-up">
@@ -173,64 +177,70 @@
 <section id="prix">
   <div class="section-header reveal-up">
     <span class="section-tag">Tarifs</span>
-    <h2>Nos Prix</h2>
-    <p class="section-desc">Des prix clairs pour des clients sérieux.</p>
+    <h2 class="display-3">Nos Prix</h2>
+    <p class="section-desc lead">Des prix clairs pour des clients sérieux.</p>
     <div class="gold-bar"></div>
   </div>
-  <div class="prix-grid">
-    <div class="prix-card reveal-up">
-      <div class="prix-icon">🦷</div>
-      <h3>Chrome-Cobalt</h3>
-      <div class="prix-amount">
-        <span class="prix-from">à partir de</span>
-        <span class="prix-val">30 000</span>
-        <span class="prix-currency">FCFA</span>
+  <div class="row row-cols-1 row-cols-md-3 g-3 prix-grid">
+    <div class="col">
+      <div class="card-base prix-card reveal-up">
+        <div class="card-icon"><i class="bi bi-gem"></i></div>
+        <h3>Chrome-Cobalt</h3>
+        <div class="prix-amount">
+          <span class="prix-from">à partir de</span>
+          <span class="prix-val">30 000</span>
+          <span class="prix-currency">FCFA</span>
+        </div>
+        <ul class="prix-features">
+          <li>✦ Alliage dentaire premium</li>
+          <li>✦ Finition brillante</li>
+          <li>✦ Sur mesure</li>
+          <li>✦ Garantie 06 mois</li>
+        </ul>
+        <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20une%20grillz%20Chrome-Cobalt." target="_blank" class="btn-outline btn-full">
+          <i class="fab fa-whatsapp"></i> Commander
+        </a>
       </div>
-      <ul class="prix-features">
-        <li>✦ Alliage dentaire premium</li>
-        <li>✦ Finition brillante</li>
-        <li>✦ Sur mesure</li>
-        <li>✦ Garantie 06 mois</li>
-      </ul>
-      <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20une%20grillz%20Chrome-Cobalt." target="_blank" class="btn-outline btn-full">
-        <i class="fab fa-whatsapp"></i> Commander
-      </a>
     </div>
-    <div class="prix-card prix-card-featured reveal-up">
-      <div class="prix-badge">⭐ Populaire</div>
-      <div class="prix-icon">👑</div>
-      <h3>Gold</h3>
-      <div class="prix-amount">
-        <span class="prix-from">à partir de</span>
-        <span class="prix-val">35 000</span>
-        <span class="prix-currency">FCFA</span>
+    <div class="col">
+      <div class="card-base prix-card prix-card-featured">
+        <div class="prix-badge">⭐ Populaire</div>
+        <div class="card-icon"><i class="bi bi-crown"></i></div>
+        <h3>Gold</h3>
+        <div class="prix-amount">
+          <span class="prix-from">à partir de</span>
+          <span class="prix-val">35 000</span>
+          <span class="prix-currency">FCFA</span>
+        </div>
+        <ul class="prix-features">
+          <li>✦ Or véritable</li>
+          <li>✦ Finition luxe</li>
+          <li>✦ Sur mesure</li>
+          <li>✦ Garantie 06 mois</li>
+        </ul>
+        <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20une%20grillz%20Gold." target="_blank" class="btn-gold btn-full">
+          <i class="fab fa-whatsapp"></i> Commander
+        </a>
       </div>
-      <ul class="prix-features">
-        <li>✦ Or véritable</li>
-        <li>✦ Finition luxe</li>
-        <li>✦ Sur mesure</li>
-        <li>✦ Garantie 06 mois</li>
-      </ul>
-      <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20une%20grillz%20Gold." target="_blank" class="btn-gold btn-full">
-        <i class="fab fa-whatsapp"></i> Commander
-      </a>
     </div>
-    <div class="prix-card reveal-up">
-      <div class="prix-icon">💎</div>
-      <h3>Iced Out &amp; Custom</h3>
-      <div class="prix-amount">
-        <span class="prix-from">prix</span>
-        <span class="prix-val" style="font-size:2rem">Sur devis</span>
+    <div class="col">
+      <div class="card-base prix-card reveal-up">
+        <div class="card-icon"><i class="bi bi-gem"></i></div>
+        <h3>Iced Out &amp; Custom</h3>
+        <div class="prix-amount">
+          <span class="prix-from">prix</span>
+          <span class="prix-val" style="font-size:2rem">Sur devis</span>
+        </div>
+        <ul class="prix-features">
+          <li>✦ Diamants &amp; pierres</li>
+          <li>✦ Design personnalisé</li>
+          <li>✦ Gravure &amp; initiales</li>
+          <li>✦ Garantie 06 mois</li>
+        </ul>
+        <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20voudrais%20un%20devis%20pour%20une%20grillz%20Iced%20Out." target="_blank" class="btn-outline btn-full">
+          <i class="fab fa-whatsapp"></i> Demander un devis
+        </a>
       </div>
-      <ul class="prix-features">
-        <li>✦ Diamants &amp; pierres</li>
-        <li>✦ Design personnalisé</li>
-        <li>✦ Gravure &amp; initiales</li>
-        <li>✦ Garantie 06 mois</li>
-      </ul>
-      <a href="https://wa.me/22871107392?text=Bonjour%2C%20je%20voudrais%20un%20devis%20pour%20une%20grillz%20Iced%20Out." target="_blank" class="btn-outline btn-full">
-        <i class="fab fa-whatsapp"></i> Demander un devis
-      </a>
     </div>
   </div>
   <p class="prix-note reveal-up">* Les prix varient selon le nombre de dents et les options choisies. Contactez-nous pour un devis précis.</p>
@@ -239,7 +249,7 @@
 <section id="avis">
   <div class="section-header reveal-up">
     <span class="section-tag">Témoignages</span>
-    <h2>Ce que disent nos clients</h2>
+    <h2 class="display-3">Ce que disent nos clients</h2>
     <div class="avis-rating reveal-up">
       <span class="stars">★★★★★</span>
       <strong>4.9/5</strong>
@@ -255,8 +265,8 @@
 <section id="contact">
   <div class="section-header reveal-up">
     <span class="section-tag">On est là</span>
-    <h2>Nous Contacter</h2>
-    <p class="section-desc">Prêt à commander ? Une question ? On répond vite.</p>
+    <h2 class="display-3">Nous Contacter</h2>
+    <p class="section-desc lead">Prêt à commander ? Une question ? On répond vite.</p>
     <div class="gold-bar"></div>
   </div>
   <div class="contact-layout">
@@ -296,7 +306,7 @@
     </div>
     <div class="contact-info reveal-up">
       <div class="contact-info-item">
-        <span>📍</span>
+        <span class="contact-info-icon"><i class="bi bi-geo-alt"></i></span>
         <div>
           <strong>Localisation</strong>
           <p>Lomé, Togo</p>
@@ -307,21 +317,21 @@
         </div>
       </div>
       <div class="contact-info-item">
-        <span>⏰</span>
+        <span class="contact-info-icon"><i class="bi bi-clock"></i></span>
         <div>
           <strong>Disponibilité</strong>
           <p>7j/7 — 9h à 22h</p>
         </div>
       </div>
       <div class="contact-info-item">
-        <span>🚚</span>
+        <span class="contact-info-icon"><i class="bi bi-truck"></i></span>
         <div>
           <strong>Livraison</strong>
           <p>Partout dans le monde</p>
         </div>
       </div>
       <div class="contact-info-item">
-        <span>📧</span>
+        <span class="contact-info-icon"><i class="bi bi-envelope"></i></span>
         <div>
           <strong>Email</strong>
           <p>grillzempire94@gmail.com</p>
@@ -334,30 +344,38 @@
 <section id="collab">
   <div class="section-header reveal-up">
     <span class="section-tag">Partenariats</span>
-    <h2>On fait des Collabs</h2>
-    <p class="section-desc">Artiste, influenceur, rappeur, barbier ou boutique — on est ouverts à toute collaboration sérieuse.</p>
+    <h2 class="display-3">On fait des Collabs</h2>
+    <p class="section-desc lead">Artiste, influenceur, rappeur, barbier ou boutique — on est ouverts à toute collaboration sérieuse.</p>
     <div class="gold-bar"></div>
   </div>
-  <div class="collab-grid">
-    <div class="collab-card reveal-up">
-      <div class="collab-icon">🎤</div>
-      <h3>Artistes &amp; Rappeurs</h3>
-      <p>Tu veux un grillz pour ton image ou un partenariat pour tes clips ? On en parle.</p>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 collab-grid">
+    <div class="col">
+      <div class="card-base collab-card reveal-up">
+        <div class="card-icon"><i class="bi bi-mic"></i></div>
+        <h3>Artistes &amp; Rappeurs</h3>
+        <p>Tu veux un grillz pour ton image ou un partenariat pour tes clips ? On en parle.</p>
+      </div>
     </div>
-    <div class="collab-card reveal-up">
-      <div class="collab-icon">📱</div>
-      <h3>Influenceurs</h3>
-      <p>Tu as une communauté engagée ? On peut créer quelque chose ensemble.</p>
+    <div class="col">
+      <div class="card-base collab-card reveal-up">
+        <div class="card-icon"><i class="bi bi-phone"></i></div>
+        <h3>Influenceurs</h3>
+        <p>Tu as une communauté engagée ? On peut créer quelque chose ensemble.</p>
+      </div>
     </div>
-    <div class="collab-card reveal-up">
-      <div class="collab-icon">💈</div>
-      <h3>Barbiers &amp; Salons</h3>
-      <p>Tu reçois des clients qui veulent du style ? Propose-leur nos grillz.</p>
+    <div class="col">
+      <div class="card-base collab-card reveal-up">
+        <div class="card-icon"><i class="bi bi-scissors"></i></div>
+        <h3>Barbiers &amp; Salons</h3>
+        <p>Tu reçois des clients qui veulent du style ? Propose-leur nos grillz.</p>
+      </div>
     </div>
-    <div class="collab-card reveal-up">
-      <div class="collab-icon">🏪</div>
-      <h3>Boutiques &amp; Revendeurs</h3>
-      <p>Tu veux revendre nos créations dans ta boutique ? Contacte-nous.</p>
+    <div class="col">
+      <div class="card-base collab-card reveal-up">
+        <div class="card-icon"><i class="bi bi-shop"></i></div>
+        <h3>Boutiques &amp; Revendeurs</h3>
+        <p>Tu veux revendre nos créations dans ta boutique ? Contacte-nous.</p>
+      </div>
     </div>
   </div>
 
