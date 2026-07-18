@@ -172,15 +172,10 @@ if (galleryTrack) {
   let activeFilter = 'all';
   let galleryOpen = false;
 
-  function getTag(item) {
-    return item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom';
-  }
-
   function galleryHtml(item) {
     return item.img
       ? `<img src="${imgPath(item.img)}" alt="${item.name}" loading="lazy" onerror="this.classList.add('broken')">
-         <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
-         <div class="gallery-tag gallery-tag-${item.type}">${getTag(item)}</div>`
+         <div class="gallery-overlay"></div>`
       : `<div class="gallery-placeholder"><span><i class="bi bi-camera"></i></span><p>Photo a venir</p></div>`;
   }
 
