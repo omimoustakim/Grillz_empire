@@ -161,6 +161,8 @@ const galleryData = [
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-22.webp' },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-23.webp', tall: true },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-24.webp', tall: true },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-25.webp', tall: true },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-26.webp', tall: true },
 ];
 
 function imgPath(path) {
