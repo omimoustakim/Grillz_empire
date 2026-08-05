@@ -2,37 +2,6 @@
    GRILLZ EMPIRE — script.js
    ============================================================ */
 
-/* ── SCROLL PROGRESS ── */
-window.addEventListener('scroll', () => {
-  const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-  document.getElementById('scrollProgress').style.width = p * 100 + '%';
-});
-
-/* ── SMOOTH SCROLL ── */
-document.addEventListener('click', e => {
-  const link = e.target.closest('a[href^="#"]');
-  if (!link) return;
-  const href = link.getAttribute('href');
-  if (href === '#') return;
-  const target = document.querySelector(href);
-  if (!target) return;
-  e.preventDefault();
-  const nav = document.getElementById('navbar');
-  const offset = nav ? nav.offsetHeight + 16 : 60;
-  const start = window.scrollY;
-  const end = target.getBoundingClientRect().top + start - offset;
-  const duration = 800;
-  const startTime = performance.now();
-  function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
-  function animate(now) {
-    const elapsed = now - startTime;
-    const p = Math.min(elapsed / duration, 1);
-    window.scrollTo(0, start + (end - start) * ease(p));
-    if (p < 1) requestAnimationFrame(animate);
-  }
-  requestAnimationFrame(animate);
-});
-
 /* ── NAVIGATION ── */
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
@@ -161,8 +130,6 @@ const galleryData = [
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-22.webp' },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-23.webp', tall: true },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-24.webp', tall: true },
-  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-25.webp', tall: true },
-  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-26.webp', tall: true },
 ];
 
 function imgPath(path) {
@@ -174,11 +141,16 @@ if (galleryTrack) {
   let activeFilter = 'all';
   let galleryOpen = false;
 
+  function getTag(item) {
+    return item.type === 'chrome' ? 'Chrome-Cobalt' : item.type === 'gold' ? 'Gold' : 'Custom';
+  }
+
   function galleryHtml(item) {
     return item.img
       ? `<img src="${imgPath(item.img)}" alt="${item.name}" loading="lazy" onerror="this.classList.add('broken')">
-         <div class="gallery-overlay"></div>`
-      : `<div class="gallery-placeholder"><span><i class="bi bi-camera"></i></span><p>Photo a venir</p></div>`;
+         <div class="gallery-overlay"><div><h4>${item.name}</h4><p>${item.desc}</p></div></div>
+         <div class="gallery-tag gallery-tag-${item.type}">${getTag(item)}</div>`
+      : `<div class="gallery-placeholder"><span>📷</span><p>Photo a venir</p></div>`;
   }
 
   function renderGallery(filter) {
