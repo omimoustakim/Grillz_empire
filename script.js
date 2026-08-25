@@ -133,6 +133,12 @@ const galleryData = [
   { type: 'gold',   name: 'Gold',           desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-25.webp' },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-26.webp', tall: true },
   { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-27.webp', tall: true },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-28.webp', tall: true },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-29.webp' },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-30.webp', tall: true },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-31.webp', tall: true },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-32.webp', tall: true },
+  { type: 'chrome', name: 'Chrome-Cobalt',  desc: 'Realisation exclusive',      img: 'Nos-realisation/grillz-33.webp', tall: true },
 ];
 
 function imgPath(path) {
