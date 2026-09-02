@@ -164,10 +164,12 @@ if (galleryTrack) {
 
   function renderGallery(filter) {
     activeFilter = filter;
-    const track = document.getElementById('galleryTrack');
-    const grid  = document.getElementById('galleryGrid');
-    track.innerHTML = '';
-    grid.innerHTML  = '';
+    const track  = document.getElementById('galleryTrack');
+    const track2 = document.getElementById('galleryTrack2');
+    const grid   = document.getElementById('galleryGrid');
+    track.innerHTML  = '';
+    if (track2) track2.innerHTML = '';
+    grid.innerHTML   = '';
 
     const items = filter === 'all' ? galleryData : galleryData.filter(g => g.type === filter);
     const allItems = [...items, ...items];
@@ -179,6 +181,16 @@ if (galleryTrack) {
       if (item.img) div.addEventListener('click', () => openLightbox(i % items.length));
       track.appendChild(div);
     });
+
+    if (track2) {
+      allItems.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item' + (item.tall ? ' gallery-item-tall' : '');
+        div.innerHTML = galleryHtml(item);
+        if (item.img) div.addEventListener('click', () => openLightbox(i % items.length));
+        track2.appendChild(div);
+      });
+    }
 
     items.forEach((item, i) => {
       const div = document.createElement('div');
