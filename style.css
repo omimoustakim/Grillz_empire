@@ -693,6 +693,39 @@ footer { background: var(--night-blue); border-top: 1px solid rgba(201,168,76,.0
   color: var(--grey); font-size: .85rem; letter-spacing: 2px; margin-top: 8px;
 }
 
+/* ── PAGES LÉGALES ── */
+.legal-section {
+  padding: 70px 20px;
+  background: var(--night-blue);
+}
+.legal-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.legal-block h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.legal-block h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  margin: 28px 0 10px;
+}
+.legal-block p {
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.legal-list {
+  margin: 10px 0 10px 20px;
+  color: var(--grey);
+  line-height: 1.8;
+}
+.legal-list li::marker { color: var(--gold); }
+
 /* ── ANIMATIONS ── */
 .reveal-up { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
 .reveal-up.visible { opacity: 1; transform: translateY(0); }
