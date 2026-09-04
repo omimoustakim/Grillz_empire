@@ -374,40 +374,45 @@
     <div class="collab-form-wrap">
       <h3 class="collab-form-title">Propose ta collaboration</h3>
       <p class="collab-form-sub">Remplis ce formulaire et on te répond dans les 24h.</p>
-      <form class="collab-form" id="collabForm" onsubmit="submitCollabForm(event)">
+      <form class="collab-form" id="collabForm" action="https://formspree.io/f/xeaqzgzl" method="POST">
         <div class="collab-form-row">
           <div class="collab-field">
             <label>Nom / Pseudo</label>
             <input type="text" name="nom" placeholder="Ton nom ou pseudo" required>
           </div>
           <div class="collab-field">
-            <label>Type de profil</label>
-            <select name="type" required>
+            <label>Type de grillz</label>
+            <select name="type_grillz" required>
               <option value="" disabled selected>Choisir...</option>
-              <option value="Artiste / Rappeur">Artiste / Rappeur</option>
-              <option value="Influenceur">Influenceur</option>
-              <option value="Barbier / Salon">Barbier / Salon</option>
-              <option value="Boutique / Revendeur">Boutique / Revendeur</option>
-              <option value="Autre">Autre</option>
+              <option value="Chrome-Cobalt">Chrome-Cobalt</option>
+              <option value="Gold">Gold</option>
+              <option value="Iced Out">Iced Out</option>
+              <option value="Custom">Custom</option>
             </select>
           </div>
         </div>
         <div class="collab-form-row">
           <div class="collab-field">
             <label>WhatsApp / Téléphone</label>
-            <input type="tel" name="phone" placeholder="+228 XX XX XX XX" required>
+            <input type="tel" name="whatsapp" placeholder="+228 XX XX XX XX" required>
           </div>
           <div class="collab-field">
-            <label>Instagram / TikTok (optionnel)</label>
-            <input type="text" name="social" placeholder="@tonpseudo">
+            <label>Ville</label>
+            <input type="text" name="ville" placeholder="Lomé, Cotonou, Paris..." required>
           </div>
         </div>
         <div class="collab-field">
-          <label>Ton idée de collab</label>
-          <textarea name="message" rows="4" placeholder="Décris ton projet, ton audience, ce que tu proposes..." required></textarea>
+          <label>Description du projet</label>
+          <textarea name="message" rows="4" placeholder="Décris le style, la forme, le modèle de grillz souhaité..." required></textarea>
+        </div>
+        <div class="collab-consent">
+          <label class="consent-check">
+            <input type="checkbox" name="consentement" value="accepte" required>
+            <span>J'accepte les conditions de moulage dentaire et je comprends que, en raison du caractère sur-mesure du produit, ma commande ne peut pas faire l'objet d'un retour ou d'un remboursement une fois la production lancée (Politique de Non-Rétractation – Droit OHADA).</span>
+          </label>
         </div>
         <button type="submit" class="btn-gold collab-submit">
-          <i class="fab fa-whatsapp"></i> Envoyer via WhatsApp
+          <i class="fas fa-paper-plane"></i> Envoyer ma commande
         </button>
       </form>
     </div>

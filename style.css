@@ -554,6 +554,27 @@ footer { background: var(--night-blue); border-top: 1px solid rgba(201,168,76,.0
 .collab-field select:focus,
 .collab-field textarea:focus { border-color: rgba(201,168,76,.5); }
 .collab-field select option { background: var(--night-blue); color: var(--white); }
+.collab-consent {
+  border: 1px solid rgba(201,168,76,.25);
+  background: rgba(201,168,76,.05);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--grey);
+  font-size: .72rem;
+  line-height: 1.5;
+}
+.consent-check input {
+  margin-top: 2px;
+  accent-color: var(--gold);
+  flex-shrink: 0;
+  cursor: pointer;
+}
 .collab-submit { width: 100%; justify-content: center; margin-top: 4px; }
 
 /* ── LIGHTBOX ── */
