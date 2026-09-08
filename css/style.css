@@ -31,7 +31,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .topline { min-height: 32px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #8d857b; background: #181716; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
 .topline a { color: #d9b779; display: inline-flex; align-items: center; gap: 4px; text-decoration: none; }
 .topline-center { opacity: .72; }
-.nav-wrap { position: relative; z-index: 10; border-bottom: 1px solid rgba(24,23,22,.12); }
+.nav-wrap { position: sticky; top: 0; z-index: 100; background: #f4f0e9; border-bottom: 1px solid rgba(24,23,22,.12); transition: background .3s ease, box-shadow .3s ease; }
+.nav-wrap.scrolled { background: rgba(244,240,233,.97); backdrop-filter: blur(10px); box-shadow: 0 2px 16px rgba(24,23,22,.06); }
 .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; }
 .wordmark { display: flex; align-items: center; gap: 10px; color: inherit; border: 0; background: transparent; padding: 0; text-align: left; text-decoration: none; }
 .wordmark-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: -.07em; }

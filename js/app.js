@@ -207,9 +207,18 @@
     });
   }
 
+  function initNavScroll() {
+    var navWrap = document.querySelector(".nav-wrap");
+    if (!navWrap) return;
+    window.addEventListener("scroll", function () {
+      navWrap.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  }
+
   function init() {
     initMenuToggle();
     initKeyboardLightbox();
+    initNavScroll();
     renderTabs();
     renderGallery("Tous");
     renderDateGrid();
