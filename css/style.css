@@ -85,8 +85,9 @@ h1 span, h2 em, blockquote em { color: #9b713b; font-style: italic; }
 .hero-scroll { position: absolute; bottom: 28px; left: 0; display: flex; align-items: center; gap: 12px; color: #9d968d; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; transform: rotate(-90deg) translateX(-100%); transform-origin: left top; }
 .scroll-line { width: 42px; height: 1px; background: #b6aea3; }
 .marquee { overflow: hidden; border-top: 1px solid rgba(24,23,22,.12); border-bottom: 1px solid rgba(24,23,22,.12); background: #e9e2d8; }
-.marquee-track { display: flex; align-items: center; justify-content: space-around; gap: 36px; min-width: max-content; padding: 13px 0; color: #6c645b; font-size: 10px; font-weight: 700; letter-spacing: .22em; }
+.marquee-track { display: flex; align-items: center; gap: 36px; min-width: max-content; padding: 13px 0; color: #6c645b; font-size: 10px; font-weight: 700; letter-spacing: .22em; animation: marqueeScroll 25s linear infinite; }
 .marquee-track i { color: #b38242; font-style: normal; font-size: 13px; }
+@keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .section { padding-top: 80px; padding-bottom: 80px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 40px; }
 .section-heading h2 { margin: 0; font-size: clamp(40px, 5vw, 62px); line-height: .85; }
