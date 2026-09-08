@@ -21,12 +21,12 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--background); color: var(--foreground); font-family: "DM Sans", sans-serif; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "DM Sans", sans-serif; overflow-x: hidden; }
 button, input, select { font: inherit; }
 button { cursor: pointer; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #c89b54; outline-offset: 4px; }
 
-.site-shell { overflow: hidden; background: #f4f0e9; }
+.site-shell { background: #f4f0e9; }
 .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
 .topline { min-height: 32px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #8d857b; background: #181716; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
 .topline a { color: #d9b779; display: inline-flex; align-items: center; gap: 4px; text-decoration: none; }
