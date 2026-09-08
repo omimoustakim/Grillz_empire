@@ -215,7 +215,7 @@
     var track = document.querySelector(".marquee-track");
     if (!track) return;
     var pos = 0;
-    var speed = 0.3;
+    var speed = 0.6;
     function animate() {
       pos -= speed;
       if (Math.abs(pos) >= track.scrollWidth / 2) pos = 0;
