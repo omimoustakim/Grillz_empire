@@ -2,7 +2,6 @@
   "use strict";
 
   var STORAGE = "Nos-realisation/";
-  var FORMSPREE_ENDPOINT = "https://formspree.io/f/xeaqzgzl";
 
   var galleryFiles = [
     "grillz-1.webp", "grillz-2.webp", "grillz-3.webp", "grillz-4.webp",
@@ -146,29 +145,26 @@
     e.preventDefault();
     var form = e.target;
     var submitBtn = form.querySelector('button[type="submit"]');
-    var errorEl = document.getElementById("form-error");
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Envoi en cours...";
-    if (errorEl) errorEl.style.display = "none";
+    if (submitBtn) submitBtn.disabled = true;
 
-    var data = new FormData(form);
-    data.set("rendez_vous_date", selectedDate);
-    data.set("rendez_vous_creneau", selectedSlot);
-    data.set("_subject", "Nouvelle demande de rendez-vous — Grillz Empire");
+    var name = form.querySelector('[name="name"]').value.trim();
+    var email = form.querySelector('[name="email"]').value.trim();
+    var phone = form.querySelector('[name="phone"]').value.trim();
+    var type = form.querySelector('[name="type"]').value;
 
-    fetch(FORMSPREE_ENDPOINT, {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" }
-    }).then(function (response) {
-      if (response.ok) {
-        showSuccess();
-      } else {
-        showError();
-      }
-    }).catch(function () {
-      showError();
-    });
+    var text = "Bonjour Grillz Empire 👋\n\n" +
+      "*Nouvelle demande de rendez-vous*\n\n" +
+      "👤 Nom : " + name + "\n" +
+      "📧 Email : " + email + "\n" +
+      "📞 Téléphone : " + phone + "\n" +
+      "🎭 Type de grillz : " + type + "\n" +
+      "📅 Date souhaitée : " + selectedDate + "\n" +
+      "🕐 Créneau : " + selectedSlot;
+
+    var url = "https://wa.me/22871107392?text=" + encodeURIComponent(text);
+    window.open(url, "_blank");
+
+    showSuccess();
   }
 
   function showError() {
@@ -182,7 +178,7 @@
 
   function showSuccess() {
     var formWrap = document.getElementById("booking-form-area");
-    formWrap.innerHTML = '<div class="success-state"><div class="success-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><p class="eyebrow"><span class="eyebrow-line"></span> Demande envoyée</p><h3>Votre créneau<br /><em>est réservé.</em></h3><p>Votre demande a bien été transmise à grillzempire94@gmail.com. L\'équipe vous confirme le rendez-vous sous 24h.</p><a class="button button-gold" href="https://wa.me/22871107392?text=Bonjour%20Grillz%20Empire%2C%20je%20viens%20de%20faire%20une%20demande%20de%20rendez-vous.">Confirmer aussi sur WhatsApp <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a></div>';
+    formWrap.innerHTML = '<div class="success-state"><div class="success-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><p class="eyebrow"><span class="eyebrow-line"></span> Demande envoyée</p><h3>Votre créneau<br /><em>est en route.</em></h3><p>Votre demande a bien été transmise. L\'équipe vous confirme le rendez-vous sous 24h.</p><a class="button button-gold" href="https://wa.me/22871107392?text=Bonjour%20Grillz%20Empire%2C%20je%20viens%20de%20faire%20une%20demande%20de%20rendez-vous.">Suivre sur WhatsApp <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a></div>';
   }
 
   function initMenuToggle() {
