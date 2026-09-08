@@ -211,10 +211,25 @@
     });
   }
 
+  function initMarquee() {
+    var track = document.querySelector(".marquee-track");
+    if (!track) return;
+    var pos = 0;
+    var speed = 0.3;
+    function animate() {
+      pos -= speed;
+      if (Math.abs(pos) >= track.scrollWidth / 2) pos = 0;
+      track.style.transform = "translateX(" + pos + "px)";
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+
   function init() {
     initMenuToggle();
     initKeyboardLightbox();
     initNavScroll();
+    initMarquee();
     renderTabs();
     renderGallery("Tous");
     renderDateGrid();
