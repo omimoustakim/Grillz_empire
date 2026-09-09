@@ -110,8 +110,6 @@ h1 span, h2 em, blockquote em { color: #9b713b; font-style: italic; }
 .piece-meta strong { padding-top: 5px; color: #9b713b; text-align: right; }
 .section-dark { color: #f4f0e9; background: #181716; }
 .manifesto { display: grid; grid-template-columns: 1.03fr .97fr; min-height: 400px; }
-.manifesto-reversed { grid-template-columns: .97fr 1.03fr; }
-.manifesto-reversed .manifesto-copy { padding: 45px 12% 45px 9%; }
 .manifesto-image { position: relative; min-height: 350px; overflow: hidden; }
 .manifesto-image img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .image-caption { position: absolute; left: 30px; bottom: 27px; color: #f4f0e9; font-size: 12px; line-height: 1.55; letter-spacing: .08em; text-transform: uppercase; }
