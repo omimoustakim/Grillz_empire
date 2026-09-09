@@ -47,6 +47,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .hero { position: relative; min-height: 520px; display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 50px; padding-top: 40px; padding-bottom: 60px; }
 .hero-copy { position: relative; z-index: 1; padding-bottom: 6px; }
+.hero-copy h2 { margin-bottom: 18px; color: #181716; font-size: clamp(48px, 6vw, 88px); line-height: .85; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: #9b713b; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 .eyebrow-line { width: 28px; height: 1px; display: inline-block; background: currentColor; }
 h1, h2, h3, p { margin-top: 0; }
