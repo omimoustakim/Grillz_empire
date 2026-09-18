@@ -15,9 +15,8 @@
     "grillz-33.webp", "grillz-34.webp", "grillz-35.webp", "grillz-37.webp",
     "grillz-37.webp", "grillz-38.webp", "grillz-39.jpg", "grillz-41.jpg"
   ];
-  var galleryTypes = ["Gold", "Custom", "Chrome-Cobalt", "Iced Out"];
   var gallery = galleryFiles.map(function (file, index) {
-    return { image: STORAGE + file, title: "Réalisation " + String(index + 1).padStart(2, "0"), type: galleryTypes[index % galleryTypes.length] };
+    return { image: STORAGE + file, title: "Réalisation " + String(index + 1).padStart(2, "0") };
   });
 
   var slots = ["10:00", "12:00", "14:00", "16:30", "18:00"];
@@ -51,15 +50,14 @@
 
   function renderGallery(filter) {
     galleryFilter = filter;
-    var filtered = filter === "Tous" ? gallery : gallery.filter(function (item) { return item.type === filter; });
     var grid = document.getElementById("real-gallery");
     if (!grid) return;
     grid.innerHTML = "";
-    filtered.forEach(function (item) {
+    gallery.forEach(function (item) {
       var globalIndex = gallery.indexOf(item);
       var btn = document.createElement("button");
       btn.className = "real-card";
-      btn.innerHTML = '<img src="' + item.image + '" alt="' + item.title + ' — ' + item.type + '" loading="lazy" /><span><small>' + item.type + '</small><strong>' + item.title + '</strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>';
+      btn.innerHTML = '<img src="' + item.image + '" alt="' + item.title + '" loading="lazy" /><span><strong>' + item.title + '</strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>';
       btn.addEventListener("click", function () { openLightbox(globalIndex); });
       grid.appendChild(btn);
     });
@@ -68,15 +66,7 @@
   function renderTabs() {
     var container = document.getElementById("gallery-tabs");
     if (!container) return;
-    var filters = ["Tous", "Gold", "Chrome-Cobalt", "Iced Out", "Custom"];
     container.innerHTML = "";
-    filters.forEach(function (f) {
-      var btn = document.createElement("button");
-      btn.textContent = f;
-      if (f === galleryFilter) btn.classList.add("active");
-      btn.addEventListener("click", function () { renderGallery(f); renderTabs(); });
-      container.appendChild(btn);
-    });
   }
 
   function renderDateGrid() {
@@ -118,7 +108,7 @@
     overlay.setAttribute("role", "dialog");
     overlay.setAttribute("aria-modal", "true");
     overlay.setAttribute("aria-label", "Détail de la réalisation");
-    overlay.innerHTML = '<button class="lightbox-close" aria-label="Fermer"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><button class="lightbox-prev" aria-label="Image précédente"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><div class="lightbox-content"><img src="' + item.image + '" alt="' + item.title + '" /><div class="lightbox-caption"><span>' + item.type + '</span><strong>' + item.title + '</strong><small>' + (index + 1) + ' / ' + gallery.length + '</small></div></div><button class="lightbox-next" aria-label="Image suivante"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>';
+    overlay.innerHTML = '<button class="lightbox-close" aria-label="Fermer"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><button class="lightbox-prev" aria-label="Image précédente"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><div class="lightbox-content"><img src="' + item.image + '" alt="' + item.title + '" /><div class="lightbox-caption"><strong>' + item.title + '</strong><small>' + (index + 1) + ' / ' + gallery.length + '</small></div></div><button class="lightbox-next" aria-label="Image suivante"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>';
     overlay.addEventListener("click", function (e) { if (e.target === overlay) closeLightbox(); });
     overlay.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
     overlay.querySelector(".lightbox-prev").addEventListener("click", function (e) { e.stopPropagation(); moveLightbox(-1); });
