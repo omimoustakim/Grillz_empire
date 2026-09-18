@@ -13,7 +13,7 @@
     "grillz-25.webp", "grillz-26.webp", "grillz-27.webp", "grillz-28.webp",
     "grillz-29.webp", "grillz-30.webp", "grillz-31.webp", "grillz-32.webp",
     "grillz-33.webp", "grillz-34.webp", "grillz-35.webp", "grillz-37.webp",
-    "grillz-37.webp", "grillz-38.webp", "grillz-39.jpg", "grillz-41.jpg"
+    "grillz-38.webp", "grillz-39.jpg", "grillz-41.jpg"
   ];
   var gallery = galleryFiles.map(function (file, index) {
     return { image: STORAGE + file, title: "Réalisation " + String(index + 1).padStart(2, "0") };
